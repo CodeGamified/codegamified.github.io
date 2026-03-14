@@ -1,0 +1,6 @@
+[submodule ".github"]
+	path = .github
+	url = https://github.com/CodeGamified/.github.git
+[submodule ".engine"]
+	path = .engine
+	url = https://github.com/CodeGamified/.engine.git
