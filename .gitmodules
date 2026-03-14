@@ -4,3 +4,6 @@
 [submodule ".engine"]
 	path = .engine
 	url = https://github.com/CodeGamified/.engine.git
+[submodule "pong"]
+	path = pong
+	url = https://github.com/CodeGamified/pong.git
