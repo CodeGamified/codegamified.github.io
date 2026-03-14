@@ -1,0 +1,19 @@
+{
+  "index": 0,
+  "nav": {
+    "href": "#home",
+    "label": "Home"
+  },
+  "hero": {
+    "id": "home",
+    "attention": 1,
+    "accentOrder": "1,2,3,4",
+    "portraitType": "emoji",
+    "portraitAction": "openModal('biography')",
+    "scrollHint": {
+      "target": "#architecture",
+      "label": "ARCHITECTURE",
+      "arrow": "🏗️"
+    }
+  }
+}

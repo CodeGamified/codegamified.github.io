@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "OAUTH_CLIENT_ID": "<your-github-client-id>",
+    "OAUTH_CLIENT_SECRET": "<your-github-client-secret>",
+    "ALLOWED_ORIGINS": "https://codegamified.github.io,http://localhost:8080"
+  },
+  "Host": {
+    "CORS": "https://codegamified.github.io,http://localhost:8080",
+    "CORSCredentials": false
+  }
+}

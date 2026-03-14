@@ -1,0 +1,114 @@
+{
+  "type": "welcome",
+  "elementId": "welcome-modal",
+  "title": "🎮 CodeGamified",
+  "sections": [
+    {
+      "heading": "🐣 Welcome to the Colony",
+      "hero": true,
+      "blockClass": "bio-symbol-block",
+      "steps": [
+        "From a single OAuth, a new player enters...",
+        "...your PROFILE becoming your IDENTITY...",
+        "...your IDENTITY powering your GAME."
+      ],
+      "tiles": [
+        {
+          "elementId": "welcomeStatRepos",
+          "valueId": "welcomeReposVal",
+          "value": "—",
+          "label": "REPOS",
+          "link": true,
+          "active": true,
+          "accent": 0
+        },
+        {
+          "elementId": "welcomeStatFollowers",
+          "valueId": "welcomeFollowersVal",
+          "value": "—",
+          "label": "FOLLOWERS",
+          "link": true,
+          "accent": 1
+        },
+        {
+          "elementId": "welcomeStatAge",
+          "valueId": "welcomeAgeVal",
+          "value": "—",
+          "label": "YEARS ON GH",
+          "link": true,
+          "accent": 2
+        },
+        {
+          "elementId": "welcomeStatCompany",
+          "valueId": "welcomeCompanyVal",
+          "value": "—",
+          "label": "COMPANY",
+          "hidden": true,
+          "layout": "row",
+          "accent": 3
+        },
+        {
+          "elementId": "welcomeStatLocation",
+          "valueId": "welcomeLocationVal",
+          "value": "—",
+          "label": "LOCATION",
+          "hidden": true,
+          "layout": "row",
+          "accent": 0
+        },
+        {
+          "elementId": "welcomeStatBlog",
+          "valueId": "welcomeBlogVal",
+          "value": "—",
+          "label": "BLOG",
+          "hidden": true,
+          "layout": "row",
+          "link": true,
+          "accent": 1
+        }
+      ]
+    },
+    {
+      "heading": "🎮 Your Profile",
+      "preview": true,
+      "blockClass": "bio-symbol-block",
+      "steps": [
+        "One profile that tracks your progress...",
+        "...how you code...",
+        "...and what you've built."
+      ],
+      "tiles": [
+        {
+          "elementId": "welcomeDownloadBtn",
+          "value": "⬇ Download",
+          "label": ".instructions.md",
+          "link": true,
+          "active": true,
+          "tabindex": true,
+          "accent": 0
+        },
+        {
+          "elementId": "welcomeCopyBtn",
+          "value": "📋 Copy",
+          "label": "to clipboard",
+          "link": true,
+          "tabindex": true,
+          "accent": 1
+        },
+        {
+          "elementId": "welcomeProfileLink",
+          "value": "Profile",
+          "label": "GitHub",
+          "link": true,
+          "tabindex": true,
+          "tag": "a",
+          "icon": "fa-brands fa-github",
+          "href": "#",
+          "accent": 3
+        }
+      ]
+    }
+  ],
+  "quote": "From thick shells, penguins hatch onto desolate tundras... ...oh, to be so cute & so naive.",
+  "quoteCite": "🐧"
+}

@@ -1,0 +1,7 @@
+*.pdb
+local.settings.json
+local.settings.json.template
+bin/
+obj/
+.git*
+.vscode

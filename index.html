@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeGamified — Learn to code through games</title>
+<meta name="description" content="Open-source boilerplate for building educational coding video games in Unity. Players write real code to control in-game systems.">
+<meta name="author" content="CodeGamified">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="CodeGamified — Learn to code through games">
+<meta property="og:description" content="Open-source Unity boilerplate: players write real Python to control satellites, ships, robots. Compiler, VM, terminal UI, time simulation — all included.">
+<meta property="og:url" content="https://codegamified.github.io/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CodeGamified — Learn to code through games">
+<meta name="twitter:description" content="Open-source Unity boilerplate: players write real Python to control satellites, ships, robots. Compiler, VM, terminal UI, time simulation — all included.">
+
+<!-- ═══ Content Security Policy ═══
+     Restricts script/connect/img sources to known origins.
+     connect-src: self + GitHub API + Azure Function proxy.
+     img-src: self + GitHub avatar CDN.
+     frame-ancestors: cannot be set via <meta>, relies on X-Frame-Options header.
+     form-action: self + GitHub OAuth (redirect).
+     base-uri: self (base tag injection prevention).
+     'unsafe-inline' required for existing inline <script>/<style> blocks.
+     TODO: migrate inline scripts to nonce-based CSP when refactoring.
+     ═══════════════════════════════════════════════════════════════ -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https://mutilar.github.io https://brianhungerman.com https://cdnjs.cloudflare.com;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://mutilar.github.io https://brianhungerman.com;
+  font-src https://cdnjs.cloudflare.com;
+  img-src 'self' https://avatars.githubusercontent.com https://mutilar.github.io https://brianhungerman.com https://raw.githubusercontent.com data:;
+  connect-src 'self' https://api.github.com https://*.azurewebsites.net https://mutilar.github.io https://raw.githubusercontent.com;
+  media-src 'self' https://mutilar.github.io https://raw.githubusercontent.com;
+  base-uri 'self';
+  form-action 'self' https://github.com;
+">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://mutilar.github.io" crossorigin>
+<link rel="dns-prefetch" href="https://mutilar.github.io">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/v4-shims.min.css">
+<link rel="stylesheet" href=".engine/css/STYLE.css" onerror="this.onerror=null;this.href='https://mutilar.github.io/css/STYLE.css';">
+<link rel="stylesheet" href="css/STYLE.css">
+<meta name="settings-path" content="json/SETTINGS.json">
+<script>
+  (function() {
+    if (localStorage.getItem('theme-mode') === 'light') {
+      document.documentElement.classList.add('light-mode');
+    }
+  })();
+</script>
+<!-- ── OAuth popup early-exit ──────────────────────────────────
+     If this page was opened as a popup by authSignIn(), detect
+     the ?code=&state= params, postMessage them to the opener,
+     and close immediately — before any heavy resources load.
+     ─────────────────────────────────────────────────────────── -->
+<script>
+  (function() {
+    if (!window.opener) return;           // not a popup
+    var p = new URLSearchParams(location.search);
+    var code  = p.get('code');
+    var state = p.get('state');
+    if (!code || !state) return;          // not an OAuth callback
+    try {
+      window.opener.postMessage(
+        { type: 'bf-oauth-callback', code: code, state: state },
+        location.origin                    // strict origin check
+      );
+    } catch (_) { /* opener closed or cross-origin */ }
+    window.close();                        // close the popup
+    // Halt page load — nothing else needs to run
+    document.documentElement.innerHTML = '';
+  })();
+</script>
+</head>
+<body>
+
+<noscript>
+  <div style="background:#1a1a1a;color:#fff;padding:48px 24px;text-align:center;font-family:system-ui,sans-serif;">
+    <h1>CodeGamified</h1>
+    <p>This site requires JavaScript to display interactive content.</p>
+  </div>
+</noscript>
+
+<a href="#home" class="skip-to-content">Skip to content</a>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PARALLAX BACKGROUND — reuses submodule canvases
+     ═══════════════════════════════════════════════════════════════ -->
+<div id="parallax-bg">
+  <canvas id="orbCanvas"></canvas>
+  <canvas id="glintCanvas"></canvas>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="glass-nav" id="mainNav">
+  <!-- Brand, theme toggle, auth slot, and nav links injected by
+       BOOT.JS → THEME.JS → DATA.JS (from per-JSON nav entries) -->
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE CONTENT
+     ═══════════════════════════════════════════════════════════════ -->
+<div id="page-content">
+
+  <!-- ▓▓▓ Hero — rendered by DATA.JS from HERO.json ▓▓▓ -->
+  <div id="hero"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTIONS — generated by BOOT.JS from SETTINGS.json sections[]
+       Each section: opaque band header → parallax window with
+       section-intro (img + blurb steps) + card-grid viz tiles.
+       Identical aesthetic to the CodeGamified engine.
+       ═══════════════════════════════════════════════════════════════ -->
+  <div id="sections"></div>
+
+  <!-- ░░░ Footer — hydrated from settings.footer ░░░ -->
+  <footer class="opaque-band landing-footer">
+    <div class="band-content">
+      <p class="landing-footer-text"></p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Modals are created on-the-fly by registerModal() in MODALS.JS -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCRIPTS — engine from submodule, fragments loaded first
+     ═══════════════════════════════════════════════════════════════ -->
+<script type="module">
+  import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.mjs';
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.worker.min.mjs';
+  window.__pdfjsLib = pdfjsLib;
+  window.dispatchEvent(new Event('pdfjsReady'));
+</script>
+<script>
+(function () {
+  const SETTINGS_PATH = (document.querySelector('meta[name="settings-path"]') || {}).content || 'json/SETTINGS.json';
+
+  function fetchTextWithFallback(candidates) {
+    let index = 0;
+    function tryNext() {
+      if (index >= candidates.length) {
+        throw new Error('All fragment sources failed: ' + candidates.join(', '));
+      }
+      const url = candidates[index++];
+      return fetch(url)
+        .then(r => {
+          if (!r.ok) throw new Error(url + ': ' + r.status);
+          return r.text();
+        })
+        .catch(() => tryNext());
+    }
+    return tryNext();
+  }
+
+  /* ── Node actions: click handlers on specific diagram nodes ── */
+  /* Keyed by mdFile path. Merged into diagram cfg on first open. */
+  window.__mermaidNodeActions = {
+    'ARCH.md': {
+      SUBMODULE: function () {
+        if (window.openMermaidModal) window.openMermaidModal('https://mutilar.github.io/ARCH.md');
+      }
+    }
+  };
+
+  /* ── Submodule fallback roots for engine scripts ── */
+  const JS_ROOTS = [
+    '.engine/js/',
+    'https://mutilar.github.io/js/'
+  ];
+
+  function loadScriptWithFallback(src, roots, optional) {
+    // If src already has a path separator → load directly (local script)
+    if (src.indexOf('/') !== -1) {
+      return new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.onload = resolve;
+        s.onerror = function () {
+          if (optional) { console.warn('[loader] optional ' + src + ' not loaded'); resolve(); }
+          else reject(new Error('Failed to load ' + src));
+        };
+        document.body.appendChild(s);
+      });
+    }
+    // Engine script — try local submodule then CDN
+    var idx = 0;
+    return new Promise(function (resolve, reject) {
+      function tryNext() {
+        if (idx >= roots.length) {
+          reject(new Error('Failed to load ' + src + ' from all roots'));
+          return;
+        }
+        var root = roots[idx++];
+        var s = document.createElement('script');
+        s.src = root + src;
+        s.onload = resolve;
+        s.onerror = tryNext;
+        document.body.appendChild(s);
+      }
+      tryNext();
+    });
+  }
+
+  /* ── Tier-based loader: group by order, Promise.all each tier ── */
+  function loadScriptTiers(scripts, roots) {
+    var tiers = {};
+    scripts.forEach(function (s) {
+      (tiers[s.order] = tiers[s.order] || []).push(s);
+    });
+    return Object.keys(tiers).sort(function (a, b) { return a - b; }).reduce(function (chain, tier) {
+      return chain.then(function () {
+        return Promise.all(tiers[tier].map(function (s) {
+          return loadScriptWithFallback(s.src, roots, s.optional);
+        }));
+      });
+    }, Promise.resolve());
+  }
+
+  /* 1. Load settings, then fragment modals, then scripts by tier */
+  fetch(SETTINGS_PATH + '?v=' + Date.now())
+    .then(r => { if (!r.ok) throw new Error('settings: ' + r.status); return r.json(); })
+    .then(settings => {
+      window.__SETTINGS = settings;
+      /* Load any modals with type "fragment" */
+      const modals = (settings && settings.modals) || {};
+      return Promise.all(
+        Object.keys(modals)
+          .filter(key => modals[key].type === 'fragment' && Array.isArray(modals[key].fragments))
+          .map(key => {
+            const cfg = modals[key];
+            const elId = cfg.elementId || (key + '-modal');
+            return fetchTextWithFallback(cfg.fragments)
+              .then(html => {
+                const el = document.getElementById(elId);
+                if (el) el.innerHTML = html;
+              });
+          })
+      );
+    })
+  .then(() => {
+    /* 2. Merge engine scripts + local scripts, load by tier */
+    var settings = window.__SETTINGS || {};
+    var scripts = (settings.scripts || []).concat(settings.scripts_local || []);
+    return loadScriptTiers(scripts, JS_ROOTS);
+  }).then(() => {
+    /* 3. Post-load hooks */
+    if (window._initAuth && window.__SETTINGS) {
+      window._initAuth(window.__SETTINGS);
+    }
+  }).catch(err => console.error('[loader]', err));
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+{
+  "type": "biography",
+  "elementId": "biography-modal",
+  "title": "🎮 CodeGamified",
+  "url": "https://codegamified.github.io",
+  "explore": {
+    "label": "Traverse",
+    "emoji": "🔭"
+  },
+  "sections": [
+    {
+      "tour": "🧩 Problem",
+      "heading": "🧩 Problem",
+      "blockClass": "bio-symbol-block",
+      "steps": [
+        "Most 'learn to code' products are glorified tutorials...",
+        "...no real stakes, no real feedback...",
+        "...just quizzes wearing a game skin."
+      ],
+      "tiles": [
+        {
+          "value": "📚",
+          "label": "Tutorials",
+          "imageSrc": "https://mutilar.github.io/png/graph.png",
+          "imageAlt": "Knowledge graph",
+          "quoteText": "Tell me and I forget, teach me and I may remember, involve me and I learn.",
+          "quoteCite": "Benjamin Franklin",
+          "accent": 2
+        },
+        {
+          "value": "🔁",
+          "label": "No stakes",
+          "imageSrc": "https://mutilar.github.io/png/timeline.png",
+          "imageAlt": "Timeline",
+          "quoteText": "Play is the highest form of research.",
+          "quoteCite": "Albert Einstein",
+          "accent": 1
+        },
+        {
+          "value": "😴",
+          "label": "No feedback",
+          "imageSrc": "https://mutilar.github.io/png/map.png",
+          "imageAlt": "Map",
+          "quoteText": "The game is the teacher.",
+          "quoteCite": "Raph Koster",
+          "accent": 2
+        }
+      ]
+    },
+    {
+      "tour": "💡 Insight",
+      "heading": "💡 Insight",
+      "blockClass": "bio-symbol-block",
+      "steps": [
+        "Games teach better because...",
+        "...the feedback loop is intrinsic...",
+        "...your code steers the ship or it doesn't."
+      ],
+      "tiles": [
+        {
+          "value": "🎮 Game",
+          "label": "Intrinsic feedback",
+          "imageSrc": "https://mutilar.github.io/png/arch.png",
+          "imageAlt": "Architecture",
+          "quoteText": "In play, the rules emerge from the player's actions.",
+          "quoteCite": "Katie Salen",
+          "accent": 0
+        },
+        {
+          "value": "🐍 Python",
+          "label": "Real code",
+          "imageSrc": "https://mutilar.github.io/png/mutilar-architecture.png",
+          "imageAlt": "Engine architecture",
+          "quoteText": "Any sufficiently advanced technology is indistinguishable from magic.",
+          "quoteCite": "Arthur C. Clarke",
+          "accent": 3
+        },
+        {
+          "value": "📦 Engine",
+          "label": "You supply the game",
+          "imageSrc": "https://mutilar.github.io/png/marp-diagram.png",
+          "imageAlt": "Architecture diagram",
+          "quoteText": "We supply the programming loop.",
+          "quoteCite": "CodeGamified",
+          "accent": 1
+        }
+      ]
+    },
+    {
+      "tour": "🎨 Act 1",
+      "heading": "🎨 Act 1: Integrate",
+      "blockClass": "bio-symbol-block",
+      "steps": [
+        "Add the .engine submodule...",
+        "...implement three interfaces...",
+        "...your game is ready to compile player code."
+      ],
+      "tiles": [
+        {
+          "value": "🍴 Fork",
+          "label": "Submodule",
+          "imageSrc": "https://mutilar.github.io/png/iterate.png",
+          "imageAlt": "Iterate",
+          "quoteText": "Make it work, make it right, make it fast.",
+          "quoteCite": "Kent Beck",
+          "accent": 0
+        },
+        {
+          "value": "🔧 3",
+          "label": "Interfaces",
+          "imageSrc": "https://mutilar.github.io/png/graph.png",
+          "imageAlt": "Graph",
+          "quoteText": "Good design is as little design as possible.",
+          "quoteCite": "Dieter Rams",
+          "accent": 3
+        },
+        {
+          "value": "🚀 Ship",
+          "label": "Your game",
+          "imageSrc": "https://mutilar.github.io/png/timeline.png",
+          "imageAlt": "Timeline",
+          "quoteText": "Real artists ship.",
+          "quoteCite": "Steve Jobs",
+          "accent": 1
+        }
+      ]
+    },
+    {
+      "tour": "📤 Act 2",
+      "heading": "📤 Act 2: Compile",
+      "blockClass": "bio-symbol-block",
+      "steps": [
+        "Players write Python in a terminal...",
+        "...the engine compiles to bytecode...",
+        "...and executes in a sandboxed VM."
+      ],
+      "tiles": [
+        {
+          "value": "🐍 AST",
+          "label": "Python subset",
+          "imageSrc": "https://mutilar.github.io/png/marp-diagram.png",
+          "imageAlt": "AST diagram",
+          "quoteText": "Programs must be written for people to read, and only incidentally for machines to execute.",
+          "quoteCite": "Abelson & Sussman",
+          "accent": 1
+        },
+        {
+          "value": "⚙️ VM",
+          "label": "27 opcodes",
+          "imageSrc": "https://mutilar.github.io/png/map.png",
+          "imageAlt": "Bytecode map",
+          "quoteText": "Simplicity is prerequisite for reliability.",
+          "quoteCite": "Edsger Dijkstra",
+          "accent": 3
+        },
+        {
+          "value": "🔒 Safe",
+          "label": "Sandboxed",
+          "imageSrc": "https://mutilar.github.io/png/arch.png",
+          "imageAlt": "Architecture",
+          "quoteText": "Simplicity is the ultimate sophistication.",
+          "quoteCite": "Leonardo da Vinci",
+          "accent": 0
+        }
+      ]
+    },
+    {
+      "tour": "🚀 Act 3",
+      "heading": "🚀 Act 3: Play",
+      "blockClass": "bio-symbol-block",
+      "steps": [
+        "The TUI renders output...",
+        "...time controls let players fast-forward...",
+        "...every game gets the same core loop."
+      ],
+      "tiles": [
+        {
+          "value": "📺 TUI",
+          "label": "Terminal UI",
+          "imageSrc": "https://mutilar.github.io/png/arch.png",
+          "imageAlt": "Terminal UI",
+          "quoteText": "The best way to predict the future is to invent it.",
+          "quoteCite": "Alan Kay",
+          "accent": 3
+        },
+        {
+          "value": "⏩ Warp",
+          "label": "Time control",
+          "imageSrc": "https://mutilar.github.io/png/graph.png",
+          "imageAlt": "Time warp",
+          "quoteText": "Time is what we want most, but what we use worst.",
+          "quoteCite": "William Penn",
+          "accent": 0
+        },
+        {
+          "value": "🎮 Loop",
+          "label": "Code → Run → Learn",
+          "imageSrc": "https://mutilar.github.io/png/mutilar-architecture.png",
+          "imageAlt": "Game loop",
+          "quoteText": "Different theme, different builtins, same learning outcomes.",
+          "quoteCite": "CodeGamified",
+          "accent": 1
+        }
+      ]
+    },
+    {
+      "tour": "⚙️ Engine",
+      "heading": "⚙️ The Engine",
+      "blockClass": "bio-principle-block",
+      "steps": [
+        "27 core opcodes...",
+        "...32 game-customizable I/O opcodes...",
+        "...Python subset → AST → RISC-like bytecode."
+      ],
+      "tiles": [
+        {
+          "value": "📄 Engine",
+          "label": "Compiler + VM",
+          "imageSrc": "https://mutilar.github.io/png/mutilar-architecture.png",
+          "imageAlt": "Engine architecture",
+          "quoteText": "Less is more.",
+          "quoteCite": "Ludwig Mies van der Rohe",
+          "accent": 0
+        },
+        {
+          "value": "📺 TUI",
+          "label": "Terminal framework",
+          "imageSrc": "https://mutilar.github.io/png/marp-diagram.png",
+          "imageAlt": "TUI diagram",
+          "quoteText": "Form follows function.",
+          "quoteCite": "Louis Sullivan",
+          "accent": 3
+        },
+        {
+          "value": "⏱️ Time",
+          "label": "Simulation clock",
+          "imageSrc": "https://mutilar.github.io/png/map.png",
+          "imageAlt": "Time system",
+          "quoteText": "The best code is no code at all.",
+          "quoteCite": "Jeff Atwood",
+          "accent": 1
+        }
+      ]
+    },
+    {
+      "tour": "👀 Ready?",
+      "heading": "👀 Ready?",
+      "blockClass": "bio-principle-block",
+      "steps": [
+        "Build your game...",
+        "...we handle the programming loop...",
+        "...starting now."
+      ],
+      "tiles": [
+        {
+          "value": "GitHub",
+          "label": "GitHub",
+          "imageSrc": "https://mutilar.github.io/png/arch.png",
+          "imageAlt": "GitHub",
+          "href": "https://github.com/CodeGamified",
+          "icon": "fa-brands fa-github",
+          "accent": 3
+        },
+        {
+          "value": "Engine",
+          "label": "Engine",
+          "imageSrc": "https://mutilar.github.io/png/map.png",
+          "imageAlt": "Engine",
+          "href": "https://github.com/CodeGamified/.engine",
+          "icon": "fa fa-cogs",
+          "accent": 0
+        },
+        {
+          "value": "Pong",
+          "label": "Example",
+          "imageSrc": "https://mutilar.github.io/png/graph.png",
+          "imageAlt": "Pong example",
+          "href": "https://github.com/CodeGamified/pong",
+          "icon": "fa fa-gamepad",
+          "accent": 1
+        }
+      ]
+    }
+  ]
+}
