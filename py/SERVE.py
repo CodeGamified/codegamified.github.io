@@ -1,7 +1,7 @@
 """
 ╔══════════════════════════════════════════════════════════════╗
-║  SERVE.py — Dev server with cyberpunk TUI animations       ║
-║  codegamified.github.io on :8080                           ║
+║  SERVE.py — Dual dev server with cyberpunk TUI animations  ║
+║  mutilar.github.io on :8000  ·  bootfile.dev on :8080      ║
 ╚══════════════════════════════════════════════════════════════╝
 """
 import http.server, functools, threading, os, subprocess, sys, time, random, math
@@ -14,7 +14,8 @@ from TUI import *  # noqa: F403 — includes strip_html, sanitize_emoji, etc.
 ROOT = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(ROOT)
 
-PORT_SITE       = 8080
+PORT_PORTFOLIO  = 8000
+PORT_LANDING    = 8080
 STALE_TIMEOUT   = 300
 WATCHDOG_INTERVAL = 60
 BOOT_DURATION   = 2.0
@@ -32,8 +33,6 @@ SITE_TITLE = _id.get('jobTitle', '')
 SITE_ORG   = _id.get('organization', '')
 GREETING   = sanitize_emoji(_con.get('greeting', f'{SITE_EMOJI} Hello, World'))
 
-_BOOT_TAGLINE = strip_html(_id.get('tagline', 'CodeGamified'))
-
 # ─────────────────────────────────────────────────────────────
 #  Boot art
 # ─────────────────────────────────────────────────────────────
@@ -49,7 +48,7 @@ _BOOT_GLYPHS = [
     "██          ██      ██ ██      ██ ██        ",
     " █████████   ████████  █████████   █████████",
 ]
-_GAME_GLYPHS = [
+_FILE_GLYPHS = [
     " █████████   ████████   ████████   █████████",
     "██          ██      ██ ██  ██  ██ ██        ",
     "██   █████  ██████████ ██  ██  ██ ██████████",
@@ -58,17 +57,12 @@ _GAME_GLYPHS = [
 ]
 
 def _build_boot_art():
-    """Generate CODE_ART centered to current terminal width."""
+    """Generate BOOTFILE_ART centered to current terminal width."""
     w = term_width()
     art = []
     for ri, row in enumerate(_BOOT_GLYPHS):
         pad = max(0, (w - len(row)) // 2)
         art.append(f"{' ' * pad}{_gradient_colorize(row)}")
-    art.append('')
-    tagline = f"{C.DIM}·{C.RST} {_BOOT_TAGLINE_ANSI}"
-    vis = len(strip_ansi(tagline))
-    tpad = max(0, (w - vis) // 2)
-    art.append(f"{' ' * tpad}{tagline}")
     return art
 
 # ─────────────────────────────────────────────────────────────
@@ -121,8 +115,6 @@ def _gradient_colorize(text):
             parts.append(f"{fg(r, g, b)}{ch}")
     parts.append(C.RST)
     return ''.join(parts)
-
-_BOOT_TAGLINE_ANSI = _gradient_colorize(_BOOT_TAGLINE)
 
 
 def _center(text, card_w):
@@ -256,7 +248,7 @@ def _shutdown_animation(prev_total, card_w, slots, last_content=None):
         time.sleep(0.05)
 
     # ── Phase 1b (0.25s): Progress bar drains 100% → 0% ──
-    bar_len = max(len(r) for r in _GAME_GLYPHS)
+    bar_len = max(len(r) for r in _FILE_GLYPHS)
     DRAIN_S = 0.25
     t0 = time.time()
     while True:
@@ -355,13 +347,13 @@ def _shutdown_animation(prev_total, card_w, slots, last_content=None):
 
 
 def animate_boot_logo():
-    """Render the CODE logo with line-by-line fade-in (standalone, no progress bar).
+    """Render the BOOT logo with line-by-line fade-in (standalone, no progress bar).
     Height-aware: truncates logo lines to fit terminal; skips animation if height <= 2."""
-    CODE_ART = _build_boot_art()
+    BOOTFILE_ART = _build_boot_art()
     h = term_height()
     # Reserve 2 lines for surrounding blanks; clamp art to what fits
     max_art = max(0, h - 2)
-    art = CODE_ART[:max_art]
+    art = BOOTFILE_ART[:max_art]
     if not art:
         return
     print()
@@ -511,7 +503,7 @@ def animate_boot_sequence(git_result, target_duration=2.0):
 
         # ── State machine ─────────────────────────────────────────
         if state == 'decode_boot':
-            # Decode-reveal the plain "CODE" label before dots start
+            # Decode-reveal the plain "BOOT" label before dots start
             DECODE_BOOT_S = 0.4
             if sa >= DECODE_BOOT_S:
                 state, state_start = 'dots', now
@@ -624,16 +616,16 @@ def animate_boot_sequence(git_result, target_duration=2.0):
             avail = max(0.1, XFADE_S - (N_G - 1) * row_stagger)
             for li in range(N_G):
                 boot_plain = _BOOT_GLYPHS[li]
-                game_plain = _GAME_GLYPHS[li]
+                file_plain = _FILE_GLYPHS[li]
                 row_t = max(0.0, min(1.0, (sa - li * row_stagger) / avail))
                 if row_t < 0.5:
-                    # CODE scrambles out
+                    # BOOT scrambles out
                     virtual_age = (1.0 - row_t * 2) * len(boot_plain) * 0.012
                     revealed = scramble_text(boot_plain, virtual_age, char_rate=0.012)
                 else:
-                    # GAME scrambles in
-                    virtual_age = (row_t - 0.5) * 2 * len(game_plain) * 0.012
-                    revealed = scramble_text(game_plain, virtual_age, char_rate=0.012)
+                    # FILES scrambles in
+                    virtual_age = (row_t - 0.5) * 2 * len(file_plain) * 0.012
+                    revealed = scramble_text(file_plain, virtual_age, char_rate=0.012)
                 content.append(f"{' ' * logo_pad}{_gradient_colorize(revealed)}")
             prev_total = _render_frame_centered(content, card_w, prev_total)
 
@@ -708,7 +700,7 @@ class FrozenHandler(http.server.BaseHTTPRequestHandler, _ThawMixin):
     def do_GET(self):
         self._touch()
         try:
-            LiveHandler(
+            http.server.SimpleHTTPRequestHandler(
                 self.request, self.client_address, self.server,
                 directory=self.server._slot.directory,
             )
@@ -718,7 +710,7 @@ class FrozenHandler(http.server.BaseHTTPRequestHandler, _ThawMixin):
     def do_HEAD(self):
         self._touch()
         try:
-            LiveHandler(
+            http.server.SimpleHTTPRequestHandler(
                 self.request, self.client_address, self.server,
                 directory=self.server._slot.directory,
             )
@@ -729,31 +721,8 @@ class FrozenHandler(http.server.BaseHTTPRequestHandler, _ThawMixin):
 class LiveHandler(http.server.SimpleHTTPRequestHandler, _ThawMixin):
     """Normal file-serving handler. Tracks activity."""
 
-    # Pre-compressed file encoding map (Unity WebGL, etc.)
-    _ENCODING_MAP = {'.gz': 'gzip', '.br': 'br'}
-
     def log_message(self, fmt, *args):
         pass
-
-    def end_headers(self):
-        """Inject Content-Encoding for pre-compressed assets (.gz, .br)."""
-        path = self.translate_path(self.path)
-        _, ext = os.path.splitext(path)
-        enc = self._ENCODING_MAP.get(ext.lower())
-        if enc:
-            self.send_header('Content-Encoding', enc)
-            # Strip the compression extension to derive the real MIME type
-            base = path[: -len(ext)]
-            mime = self.guess_type(base)
-            if mime:
-                # Replace the default Content-Type (application/gzip)
-                # with the underlying type (application/javascript, etc.)
-                self._headers_buffer = [
-                    line for line in self._headers_buffer
-                    if not line.lower().startswith(b'content-type')
-                ]
-                self.send_header('Content-Type', mime)
-        super().end_headers()
 
     def do_GET(self):
         self._touch()
@@ -889,8 +858,8 @@ def git_sync(result_box):
     # 1. Init submodules (idempotent if already initialized)
     step('Initializing submodules', 'submodule', 'init')
 
-    # 2. Update submodules with remote tracking (recursive for nested engines)
-    step('Updating submodules', 'submodule', 'update', '--init', '--remote', '--merge', '--recursive')
+    # 2. Update submodules with remote tracking
+    step('Updating submodules', 'submodule', 'update', '--init', '--remote', '--merge')
 
     # 3. Fetch all remotes
     step('Fetching remotes', 'fetch', '--all', '--prune')
@@ -1056,8 +1025,8 @@ def idle_pulse_boxed(slots, prev_total, card_w=52, skip_decode=False):
     def _build_static(tw, h, cw, usable):
         """Build the static portions: logo + bar.
         Returns (content, fat) where fat ∈ [0,2] = padding slots filled."""
-        N_GLYPH = len(_GAME_GLYPHS)
-        glyph_w = max(len(r) for r in _GAME_GLYPHS)
+        N_GLYPH = len(_FILE_GLYPHS)
+        glyph_w = max(len(r) for r in _FILE_GLYPHS)
         max_glyphs = max(0, h - 10)
         N = min(N_GLYPH, max_glyphs)
         logo_pad = max(0, (usable - glyph_w) // 2)
@@ -1068,7 +1037,7 @@ def idle_pulse_boxed(slots, prev_total, card_w=52, skip_decode=False):
 
         content = []
         for li in range(N):
-            content.append(f"{' ' * logo_pad}{_gradient_colorize(_GAME_GLYPHS[li])}")
+            content.append(f"{' ' * logo_pad}{_gradient_colorize(_FILE_GLYPHS[li])}")
         if N > 0:
             content.append("")
         bar = progress_bar(1.0, length=glyph_w, show_pct=False)
@@ -1158,9 +1127,14 @@ def idle_pulse_boxed(slots, prev_total, card_w=52, skip_decode=False):
 if __name__ == "__main__":
     slots = [
         ServerSlot(
+            directory=os.path.join(REPO_ROOT, "mutilar.github.io"),
+            port=PORT_PORTFOLIO,
+            label="mutilar.github.io",
+        ),
+        ServerSlot(
             directory=REPO_ROOT,
-            port=PORT_SITE,
-            label="codegamified.github.io",
+            port=PORT_LANDING,
+            label="bootfile.dev",
         ),
     ]
 
@@ -1189,9 +1163,9 @@ if __name__ == "__main__":
             cw = min(INFO_W, tw)
             usable = max(0, cw - 4)
 
-            # Build GAME rows (already visible from crossfade)
-            N_GLYPH = len(_GAME_GLYPHS)
-            glyph_w = max(len(r) for r in _GAME_GLYPHS)
+            # Build FILES rows (already visible from crossfade)
+            N_GLYPH = len(_FILE_GLYPHS)
+            glyph_w = max(len(r) for r in _FILE_GLYPHS)
             h = term_height()
             max_glyphs = max(0, h - 10)
             N = min(N_GLYPH, max_glyphs)
@@ -1199,7 +1173,7 @@ if __name__ == "__main__":
 
             logo_rows = []
             for li in range(N):
-                logo_rows.append(f"{' ' * logo_pad}{_gradient_colorize(_GAME_GLYPHS[li])}")
+                logo_rows.append(f"{' ' * logo_pad}{_gradient_colorize(_FILE_GLYPHS[li])}")
             if N > 0:
                 logo_rows.append('')
 
