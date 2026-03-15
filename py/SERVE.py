@@ -866,8 +866,8 @@ def git_sync(result_box):
     # 1. Init submodules (idempotent if already initialized)
     step('Initializing submodules', 'submodule', 'init')
 
-    # 2. Update submodules with remote tracking
-    step('Updating submodules', 'submodule', 'update', '--init', '--remote', '--merge')
+    # 2. Update submodules with remote tracking (recursive for nested engines)
+    step('Updating submodules', 'submodule', 'update', '--init', '--remote', '--merge', '--recursive')
 
     # 3. Fetch all remotes
     step('Fetching remotes', 'fetch', '--all', '--prune')

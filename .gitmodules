@@ -7,3 +7,9 @@
 [submodule ".data"]
 	path = .data
 	url = https://github.com/CodeGamified/.data.git
+[submodule "tanks"]
+	path = tanks
+	url = https://github.com/CodeGamified/tanks.git
+[submodule "midi"]
+	path = midi
+	url = https://github.com/CodeGamified/midi.git
