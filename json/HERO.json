@@ -9,11 +9,12 @@
     "attention": 1,
     "accentOrder": "1,2,3,4",
     "portraitType": "emoji",
+    "portraitBackground": "png/cg.png",
     "portraitAction": "openModal('biography')",
     "scrollHint": {
-      "target": "#architecture",
-      "label": "ARCHITECTURE",
-      "arrow": "🏗️"
+      "target": "#demos",
+      "label": "DEMOS",
+      "arrow": "🎮"
     }
   }
 }

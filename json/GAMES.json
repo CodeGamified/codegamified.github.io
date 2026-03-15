@@ -17,7 +17,7 @@
     "headerItems": [
       { "type": "grid" }
     ],
-    "scrollHint": { "target": "#footer-band", "label": "Cheers", "arrow": "🍻" }
+    "scrollHint": { "target": "#open-source", "label": "Open Source", "arrow": "🏗️" }
   },
   "sections": [
     {

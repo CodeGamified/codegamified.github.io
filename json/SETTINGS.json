@@ -1,7 +1,7 @@
 {
   "identity": {
     "name": "Code Gamified",
-    "emoji": "🎮",
+    "emoji": "🕹",
     "portrait": null,
     "tagline": "WRITE real CODE.<br>CONTROL the GAME.<br>LEARN by PLAYING.",
     "jobTitle": null,
@@ -88,7 +88,7 @@
     ]
   },
   "console": {
-    "greeting": "🎮 CodeGamified 👋🏻"
+    "greeting": "🕹 Code Gamified 👋🏻"
   },
   "scripts": [
     { "src": "CONSOLE.js",   "order": 0 },
@@ -107,14 +107,13 @@
     { "src": "RADIO.js",     "order": 6 }
   ],
   "scripts_local": [
-    { "src": "js/AUTH.JS",    "order": 7, "optional": true },
-    { "src": "js/WELCOME.JS", "order": 8, "optional": true }
+    { "src": "js/AUTH.JS",    "order": 7, "optional": true }
   ],
   "data": {
     "path": "json/",
     "sources": [
       "HERO.json",
-      "DEMO.json",
+      "DEMOS.json",
       "GAMES.json",
       "OPENSOURCE.json"
     ]
