@@ -1,0 +1,106 @@
+{
+  "index": 9,
+  "nav": {
+    "href": "#games",
+    "label": "Games"
+  },
+  "header": {
+    "id": "games",
+    "heading": "🎮 Games",
+    "badges": [
+      { "label": "SeaRäuber", "icon": "fa fa-github", "href": "https://github.com/searauber", "external": true },
+      { "label": "BitNaughts", "icon": "fa fa-github", "href": "https://github.com/bitnaughts", "external": true },
+      { "label": "Iterate", "icon": "fa fa-github", "href": "https://github.com/iteratecode", "external": true }
+    ],
+    "attention": 0,
+    "accentOrder": "1,0,0,3",
+    "headerItems": [
+      { "type": "grid" }
+    ],
+    "scrollHint": { "target": "#footer-band", "label": "Cheers", "arrow": "🍻" }
+  },
+  "sections": [
+    {
+      "id": "games",
+      "items": [
+        {
+          "ID": "pong",
+          "NAME": "🏓 Pong",
+          "MOTTO": "Ping, Pong, Program",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/CodeGamified/codegamified.github.io",
+          "PLAY": "builds/pong/index.html",
+          "PLAY_W": 960,
+          "PLAY_H": 600,
+          "TEXT": "<h3>The Idea</h3><p>The classic that started it all — reimagined as a programming challenge. Pong strips game design down to its purest form: a ball, two paddles, and the code you write to control them. Players write real code to drive their paddle's AI, learning fundamentals of game loops, input handling, and physics prediction along the way.</p><h3>How It Works</h3><p>Built in Unity with C#, Pong runs as a WebGL build served directly from the site. The interpreter evaluates player-written code each frame to control paddle movement, enabling experimentation with prediction algorithms, reaction timing, and strategic positioning — all through actual programming.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Pong"
+        },
+        {
+          "ID": "midi",
+          "NAME": "🎹 Midi",
+          "MOTTO": "Compose in Code",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/CodeGamified/codegamified.github.io",
+          "TEXT": "<h3>The Idea</h3><p>Music meets programming. Midi turns musical composition into a coding challenge — players write code to generate, sequence, and manipulate MIDI events in real time. Learn about audio programming, event-driven systems, and procedural generation while making actual music.</p><h3>How It Works</h3><p>Built in Unity with C#, the Midi game exposes a programming interface for MIDI I/O, note sequencing, and haptic feedback. Players write programs that compose melodies, build chord progressions, and react to musical input — bridging the gap between creative expression and computational thinking.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Midi"
+        },
+        {
+          "ID": "tanks",
+          "NAME": "🪖 Tanks",
+          "MOTTO": "Load, Aim, Execute",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/CodeGamified/codegamified.github.io",
+          "TEXT": "<h3>The Idea</h3><p>Program your tank, outsmart the enemy. Tanks is a tactical AI programming game where players write code to control their tank's movement, aiming, and firing systems. Victory goes to the best algorithm, not the fastest reflexes.</p><h3>How It Works</h3><p>Built in Unity with C#, Tanks pits player-coded AIs against each other on a battlefield. Players program targeting algorithms, pathfinding routines, and evasion strategies. The game teaches real-world concepts like vector math, state machines, and autonomous decision-making — all through the lens of tank combat.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Tanks"
+        },
+        {
+          "ID": "searauber",
+          "NAME": "🏴‍☠️ SeaRäuber",
+          "MOTTO": "Logic Meets Fate",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/searauber",
+          "TEXT": "<h3>Logic Meets Fate</h3><p>In SeaRäuber, logical mastery is only the first chapter of the story. While your code builds ships, directs fleets, and governs an empire, fate's hand — revealed through tarot — challenges your carefully laid plans. Will prophecy bring prosperity or disaster? Each card draw brings new challenges, forcing you to adapt, overcome, or embrace the chaos. In this world, strategy bends to fate, and only those who balance logic and fortune will leave a lasting legacy.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Sea<br>Räuber"
+        },
+        {
+          "ID": "bitnaughts",
+          "NAME": "☄ BitNaughts",
+          "MOTTO": "Code Gamified",
+          "DATE": "Spring 2020 - Present",
+          "GITHUB": "https://github.com/bitnaughts",
+          "PLAY": "https://bitnaughts.io",
+          "TEXT": "<h3>The Idea</h3><p>BitNaughts is a free-to-play educational programming video game: code gamified. Construct your object-oriented spaceship, learn programming to code your systems, and save the Earth from Martian invasion. Born from <a href='#games' onclick=\"event.preventDefault(); navigateToModal('games','iterate')\">Iterate's</a> interpreter and refined across four consecutive Microsoft Hackathons, BitNaughts turns real coding into real gameplay.</p><h3>How It Works</h3><p>Built in Unity 6.0 with C#, the project is organized as a set of Git submodules: a Unity project (<a href='https://github.com/bitnaughts/bitnaughts.unity' target='_blank'>bitnaughts.unity</a>), a custom C# interpreter (<a href='https://github.com/bitnaughts/bitnaughts.interpreter' target='_blank'>bitnaughts.interpreter</a>) that steps through each OP Code of abstracted languages, a WebGL front-end (<a href='https://github.com/bitnaughts/bitnaughts.github.io' target='_blank'>bitnaughts.github.io</a>) for browser-based play, a serverless Azure back-end (<a href='https://github.com/bitnaughts/bitnaughts.mainframe' target='_blank'>bitnaughts.mainframe</a>) for persistence, and separate repos for assets, UI/UX, and components. Players write actual code to control their ship's systems (navigation, weapons, shields) with the interpreter evaluating their programs in real time against the game's physics and combat engine.</p><h3>The Grind</h3><p>Four Microsoft Hackathon pitches ('20, '21, '22, '23) shaped the vision through iterative live-demo feedback, each year pushing the architecture further: from a monolithic prototype to a fully modular, open-source game engine. The submodule architecture means contributors can clone, modify, and submit changes to any layer independently. The core challenge remains the same one Iterate cracked: making programming genuinely fun, not just gamified busywork.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Bit<br>Naughts"
+        },
+        {
+          "ID": "iterate",
+          "NAME": "🔄 Iterate",
+          "MOTTO": "Mobile Code Editor",
+          "DATE": "Spring 2017",
+          "GITHUB": "https://github.com/iteratecode",
+          "PLAY": "https://iterateco.de",
+          "TEXT": "<h3>The Idea</h3><p>Iterate is a mobile code editor that uses Java/Arduino syntax but lets you build programs through guided tap-based selections instead of raw typing. It sits between block-based tools like Scratch and writing real code. Built for UC Merced's CITRIS Mobile App Challenge.</p><h3>How It Works</h3><p>Built in Unity with C#, the app runs on a 1,300+ line CodeManager that acts as both editor and interpreter. Users tap a line to enter edit mode, then construct code through cascading option menus: Create Variable → Integer/Double/Boolean/String → name it → assign a value. Flow control (if/else, while, for loops), Arduino hardware calls (pinMode, digitalWrite, analogRead, analogWrite, Serial.begin/print/println, servo.attach/write, delay, map), and variable scoping are all handled through the same tap-driven UI. A ColorCoder class provides real-time syntax highlighting (keywords in blue, objects in teal, strings in amber, comments in green) by injecting Unity rich text color tags on every frame. Pre-built lesson templates (Windmill, Servos, Stopwatch) load from Resources as starting scaffolds.</p><h3>The Grind</h3><p>The editor tracks variable scope by scanning every line above the cursor for declarations, dynamically populating only valid options at each step; you cannot write a syntax error. The whole thing compiles to WebGL for in-browser play on any device. $5,000 Grand Prize at the 2017 CITRIS Mobile App Challenge.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Iterate"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "index": 1,
+  "nav": {
+    "href": "#demos",
+    "label": "Demos"
+  },
+  "header": {
+    "id": "demos",
+    "heading": "🎮 Demos",
+    "badges": [
+      { "label": "CodeGamified", "icon": "fa fa-github", "href": "https://github.com/CodeGamified/codegamified.github.io", "external": true }
+    ],
+    "frosted": true,
+    "attention": 0,
+    "accentOrder": "3,4,1,2",
+    "intro": {
+      "img": "png/cg.png",
+      "alt": "CodeGamified",
+      "steps": [
+        { "align": "left",   "html": "WRITE real CODE..." },
+        { "align": "center", "html": "...CONTROL the GAME..." },
+        { "align": "right",  "html": "...LEARN by PLAYING!" }
+      ],
+      "summary": "You supply the game. We supply the programming loop."
+    },
+    "headerItems": [
+      {
+        "type": "viz",
+        "id": "viz-cards",
+        "wide": true,
+        "tiles": [
+          {
+            "emoji": "🎮",
+            "label": "DEMOS",
+            "ariaLabel": "Play a demo",
+            "action": "play",
+            "img": "png/pong.png",
+            "imgAlt": "Demos",
+            "togglers": [
+                    { "label": "PONG",  "dot": "🏓", "active": true, "src": "png/pong.png", "accent": 1, "gameUrl": "builds/pong/index.html", "gameTitle": "🏓 Pong", "gameW": 960, "gameH": 600 },
+                    { "label": "MIDI",  "dot": "🎹", "accent": 2, "gameUrl": "builds/midi/index.html", "gameTitle": "🎹 Midi", "gameW": 960, "gameH": 600 },
+                    { "label": "TANKS", "dot": "🪖", "accent": 3, "gameUrl": "builds/tanks/index.html", "gameTitle": "🪖 Tanks", "gameW": 960, "gameH": 600 }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "detail",
+        "label": "📂 REPO",
+        "actionBadge": "<i class=\"fa fa-github\"></i> GitHub",
+        "actionBadgeStatic": true,
+        "href": "https://github.com/CodeGamified/codegamified.github.io",
+        "external": true,
+        "action": "mermaid",
+        "actionTarget": "ARCH.md",
+        "ariaLabel": "Open Architecture Diagrams",
+        "details": [
+          { "icon": "fa fa-sitemap",     "title": "FILES",  "desc": "<code>index.html</code> · <code>js/</code> · <code>json/</code> · <code>azure/</code> · <code>.engine/</code>" },
+          { "icon": "fa fa-code",        "title": "TRUTH",  "desc": "EDIT <code>*.json</code> to CUSTOMIZE your SITE!" },
+          { "icon": "fa fa-file-code-o", "title": "SOURCE", "desc": "<code>SETTINGS.json</code> · <code>HERO.json</code> · <code>ARCHITECTURE.json</code> · <code>*.json</code>" },
+          { "icon": "fa fa-key",         "title": "OAUTH",  "desc": "SIGN IN to BOOT UP!" }
+        ],
+        "detailRow": [
+          { "icon": "fa fa-cloud",         "title": "HOST: GitHub Pages" },
+          { "icon": "fa fa-balance-scale", "title": "LICENSE: Apache 2.0" }
+        ]
+      }
+    ]
+  }
+}

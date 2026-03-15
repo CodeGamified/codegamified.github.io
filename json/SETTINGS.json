@@ -114,7 +114,9 @@
     "path": "json/",
     "sources": [
       "HERO.json",
-      "ARCHITECTURE.json"
+      "DEMO.json",
+      "GAMES.json",
+      "OPENSOURCE.json"
     ]
   },
   "media": {
@@ -131,6 +133,39 @@
     "subtitle": null
   },
   "modals": {
+    "entry": {
+      "type": "entry",
+      "elementId": "modal",
+      "cardClass": "",
+      "imgPathTemplate": "png/{ID}{EXT}",
+      "stickyBar": {
+        "titleId": "modal-title",
+        "titleTag": "p",
+        "titleClass": "modal-subtitle"
+      }
+    },
+    "game": {
+      "type": "iframe",
+      "elementId": "game-modal",
+      "cardClass": "game-modal-card",
+      "stickyBar": {
+        "icon": "fa fa-gamepad",
+        "title": "Play",
+        "titleId": "game-modal-title",
+        "links": [
+          {
+            "icon": "fa fa-external-link",
+            "label": "Open in new tab",
+            "id": "game-modal-link"
+          }
+        ]
+      },
+      "contentClass": "game-embed-wrap",
+      "iframeId": "game-iframe",
+      "iframeTitle": "Game",
+      "iframeScrolling": "no",
+      "fitToContainer": true
+    },
     "biography": "BIOGRAPHY.json",
     "welcome": "WELCOME.json"
   },
