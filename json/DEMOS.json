@@ -34,7 +34,7 @@
             "label": "DEMOS",
             "ariaLabel": "Play a demo",
             "action": "play",
-            "img": "png/pong.png",
+            "img": "png/pong.gif",
             "imgAlt": "Demos",
             "togglers": [
                     { "label": "PONG",  "dot": "🏓", "active": true, "src": "png/pong.gif", "accent": 1, "gameUrl": "builds/pong/index.html", "gameTitle": "🏓 Pong", "gameW": 960, "gameH": 600 },
