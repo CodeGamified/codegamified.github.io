@@ -708,7 +708,7 @@ class FrozenHandler(http.server.BaseHTTPRequestHandler, _ThawMixin):
     def do_GET(self):
         self._touch()
         try:
-            http.server.SimpleHTTPRequestHandler(
+            LiveHandler(
                 self.request, self.client_address, self.server,
                 directory=self.server._slot.directory,
             )
@@ -718,7 +718,7 @@ class FrozenHandler(http.server.BaseHTTPRequestHandler, _ThawMixin):
     def do_HEAD(self):
         self._touch()
         try:
-            http.server.SimpleHTTPRequestHandler(
+            LiveHandler(
                 self.request, self.client_address, self.server,
                 directory=self.server._slot.directory,
             )
@@ -729,8 +729,31 @@ class FrozenHandler(http.server.BaseHTTPRequestHandler, _ThawMixin):
 class LiveHandler(http.server.SimpleHTTPRequestHandler, _ThawMixin):
     """Normal file-serving handler. Tracks activity."""
 
+    # Pre-compressed file encoding map (Unity WebGL, etc.)
+    _ENCODING_MAP = {'.gz': 'gzip', '.br': 'br'}
+
     def log_message(self, fmt, *args):
         pass
+
+    def end_headers(self):
+        """Inject Content-Encoding for pre-compressed assets (.gz, .br)."""
+        path = self.translate_path(self.path)
+        _, ext = os.path.splitext(path)
+        enc = self._ENCODING_MAP.get(ext.lower())
+        if enc:
+            self.send_header('Content-Encoding', enc)
+            # Strip the compression extension to derive the real MIME type
+            base = path[: -len(ext)]
+            mime = self.guess_type(base)
+            if mime:
+                # Replace the default Content-Type (application/gzip)
+                # with the underlying type (application/javascript, etc.)
+                self._headers_buffer = [
+                    line for line in self._headers_buffer
+                    if not line.lower().startswith(b'content-type')
+                ]
+                self.send_header('Content-Type', mime)
+        super().end_headers()
 
     def do_GET(self):
         self._touch()
