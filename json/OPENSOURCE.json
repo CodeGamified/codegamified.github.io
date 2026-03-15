@@ -10,7 +10,7 @@
     "attention": 0,
     "accentOrder": "3,4,1,2",
     "intro": {
-      "img": "png/brian-ghibli.png",
+      "img": "png/cg.png",
       "alt": "Brian Hungerman",
       "steps": [
         { "align": "left",   "html": "From a <strong><a href=\"#\" onclick=\"event.preventDefault(); openModal('link', 'https://en.wikipedia.org/wiki/Coprime_integers', 'Coprime Integers');\">Coprime</a> parallax orb engine</strong> working away in the background..." },

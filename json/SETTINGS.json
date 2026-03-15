@@ -115,7 +115,8 @@
       "HERO.json",
       "DEMOS.json",
       "GAMES.json",
-      "OPENSOURCE.json"
+      "OPENSOURCE.json",
+      "BIOGRAPHY.json"
     ]
   },
   "media": {
@@ -165,8 +166,7 @@
       "iframeScrolling": "no",
       "fitToContainer": true
     },
-    "biography": "BIOGRAPHY.json",
-    "welcome": "WELCOME.json"
+    "biography": "BIOGRAPHY.json"
   },
   "footer": {
     "text": "Code<span class=\"logo-dot\">.</span>Gamified",

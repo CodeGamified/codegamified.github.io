@@ -1,9 +1,9 @@
 const cacheName = "CodeGamified-Pong-1.0";
 const contentToCache = [
     "Build/pong.loader.js",
-    "Build/pong.framework.js.gz",
-    "Build/pong.data.gz",
-    "Build/pong.wasm.gz",
+    "Build/pong.framework.js",
+    "Build/pong.data",
+    "Build/pong.wasm",
     "TemplateData/style.css"
 
 ];

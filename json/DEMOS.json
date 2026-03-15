@@ -6,11 +6,10 @@
   },
   "header": {
     "id": "demos",
-    "heading": "🎮 Demos",
+    "heading": "🕹 Demos",
     "badges": [
       { "label": "CodeGamified", "icon": "fa fa-github", "href": "https://github.com/CodeGamified/codegamified.github.io", "external": true }
     ],
-    "frosted": true,
     "attention": 0,
     "accentOrder": "3,4,1,2",
     "intro": {
@@ -21,7 +20,8 @@
         { "align": "center", "html": "...CONTROL the GAME..." },
         { "align": "right",  "html": "...LEARN by PLAYING!" }
       ],
-      "summary": "You supply the game. We supply the programming loop."
+      "summary": "You supply the game. We supply the programming loop.",
+      "scrollHint": { "target": "#games", "label": "Games", "arrow": "🎮" }
     },
     "headerItems": [
       {
@@ -31,7 +31,7 @@
         "tiles": [
           {
             "emoji": "🎮",
-            "label": "DEMOS",
+            "label": "Play Me!",
             "ariaLabel": "Play a demo",
             "action": "play",
             "img": "png/pong.gif",
@@ -46,23 +46,23 @@
       },
       {
         "type": "detail",
-        "label": "📂 REPO",
-        "actionBadge": "<i class=\"fa fa-github\"></i> GitHub",
+        "label": "⚙️ Engine",
+        "actionBadge": "<i class=\"fa fa-github\"></i> CodeGamified/.engine",
         "actionBadgeStatic": true,
-        "href": "https://github.com/CodeGamified/codegamified.github.io",
+        "href": "https://github.com/CodeGamified/.engine",
         "external": true,
         "action": "mermaid",
         "actionTarget": "ARCH.md",
-        "ariaLabel": "Open Architecture Diagrams",
+        "ariaLabel": "Open Engine Architecture Diagrams",
         "details": [
-          { "icon": "fa fa-sitemap",     "title": "FILES",  "desc": "<code>index.html</code> · <code>js/</code> · <code>json/</code> · <code>azure/</code> · <code>.engine/</code>" },
-          { "icon": "fa fa-code",        "title": "TRUTH",  "desc": "EDIT <code>*.json</code> to CUSTOMIZE your SITE!" },
-          { "icon": "fa fa-file-code-o", "title": "SOURCE", "desc": "<code>SETTINGS.json</code> · <code>HERO.json</code> · <code>ARCHITECTURE.json</code> · <code>*.json</code>" },
-          { "icon": "fa fa-key",         "title": "OAUTH",  "desc": "SIGN IN to BOOT UP!" }
+          { "icon": "fa fa-microchip",    "title": "Core",      "desc": "<code>Bootstrap</code> · <code>Engine</code> · <code>Time</code>" },
+          { "icon": "fa fa-terminal",     "title": "Control",  "desc": "<code>TUI</code> · <code>Editor</code>" },
+          { "icon": "fa fa-cubes",        "title": "Assets",      "desc": "<code>Procedural</code> · <code>Camera</code> · <code>Audio</code>" },
+          { "icon": "fa fa-database",     "title": "State",     "desc": "<code>Persistence</code> · <code>Quality</code> · <code>Settings</code>" }
         ],
         "detailRow": [
-          { "icon": "fa fa-cloud",         "title": "HOST: GitHub Pages" },
-          { "icon": "fa fa-balance-scale", "title": "LICENSE: Apache 2.0" }
+          { "icon": "fa fa-code-fork",     "title": "SUBMODULE: git" },
+          { "icon": "fa fa-puzzle-piece",  "title": "11 MODULES" }
         ]
       }
     ]
