@@ -20,8 +20,7 @@
         { "align": "center", "html": "...CONTROL the GAME..." },
         { "align": "right",  "html": "...LEARN by PLAYING!" }
       ],
-      "summary": "You supply the game. We supply the programming loop.",
-      "scrollHint": { "target": "#games", "label": "Games", "arrow": "🎮" }
+      "summary": "You supply the game. We supply the programming loop."
     },
     "headerItems": [
       {
@@ -65,6 +64,7 @@
           { "icon": "fa fa-puzzle-piece",  "title": "11 MODULES" }
         ]
       }
-    ]
+    ],
+    "scrollHint": { "target": "#games", "label": "Games", "arrow": "🎮" }
   }
 }
