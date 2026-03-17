@@ -121,11 +121,9 @@
   },
   "media": {
     "playlist": [
-      { "src": "https://raw.githubusercontent.com/Mutilar/mutilar.github.io/master/mp3/corporate.mp3", "title": "Corporate" },
-      { "src": "https://raw.githubusercontent.com/Mutilar/mutilar.github.io/master/mp3/electric.mp3",  "title": "Electric" },
-      { "src": "https://raw.githubusercontent.com/Mutilar/mutilar.github.io/master/mp3/emotional.mp3", "title": "Emotional" },
-      { "src": "https://raw.githubusercontent.com/Mutilar/mutilar.github.io/master/mp3/ethereal.mp3",  "title": "Ethereal" },
-      { "src": "https://raw.githubusercontent.com/Mutilar/mutilar.github.io/master/mp3/positive.mp3",  "title": "Positive" }
+      { "src": "mp3/CYBERPUNK.wav",  "title": "Cyberpunk" },
+      { "src": "mp3/PHONK.wav",      "title": "Phonk" },
+      { "src": "mp3/RETROWAVE.wav",  "title": "Retrowave" }
     ]
   },
   "connect": {
