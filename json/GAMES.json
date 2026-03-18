@@ -159,6 +159,78 @@
           "shortname": "Connect 4"
         },
         {
+          "ID": "poker",
+          "NAME": "🃏 Poker",
+          "MOTTO": "Call, Raise, Override",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/CodeGamified/poker",
+          "TEXT": "<h3>The Idea</h3><p>Write the bluff. Poker puts incomplete information, probability, and deception into your hands as code. Players program bet sizing, hand evaluation, and opponent modeling to dominate a table of coded competitors — where the best poker face is the best algorithm.</p><h3>How It Works</h3><p>Built in Unity with C#, Poker exposes hole cards, community cards, pot odds, and opponent betting history to player-written code. Players program strategies ranging from tight-aggressive fundamentals to advanced range estimation and bluff frequency tuning — learning probability, game theory, and decision-making under uncertainty.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Poker"
+        },
+        {
+          "ID": "blackjack",
+          "NAME": "🂡 Blackjack",
+          "MOTTO": "Hit Me with Logic",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/CodeGamified/blackjack",
+          "TEXT": "<h3>The Idea</h3><p>Know when to hold, know when to fold — because your code decided. Blackjack turns the casino classic into a pure probability engine where players program hit, stand, double-down, and split decisions. Beat the house with math, not luck.</p><h3>How It Works</h3><p>Built in Unity with C#, Blackjack gives player-written code the current hand value, dealer's visible card, and remaining deck composition. Players implement basic strategy tables, card counting systems, and Kelly criterion bet sizing — learning expected value, conditional probability, and risk management one hand at a time.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Blackjack"
+        },
+        {
+          "ID": "racer",
+          "NAME": "🏎️ Racer",
+          "MOTTO": "Fastest Algorithm Wins",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/CodeGamified/racer",
+          "TEXT": "<h3>The Idea</h3><p>Victory goes to the fastest algorithm, not the fastest fingers. Racer puts players behind the wheel of a code-driven car — program throttle, braking, and racing lines to lap an AI opponent on procedural tracks.</p><h3>How It Works</h3><p>Built in Unity with C#, Racer exposes track geometry, car velocity, tire grip, and opponent position to player-written code. Players program steering controllers, apex calculation, and overtake logic — learning PID control, path optimization, and real-time physics negotiation at top speed.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Racer"
+        },
+        {
+          "ID": "sudoku",
+          "NAME": "🧩 Sudoku",
+          "MOTTO": "Solve by Algorithm",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/CodeGamified/sudoku",
+          "TEXT": "<h3>The Idea</h3><p>The puzzle is the algorithm. Sudoku challenges players to write a solver that cracks 9×9 grids — not by guessing, but by programming constraint propagation, backtracking, and elimination strategies that scale from easy to diabolical.</p><h3>How It Works</h3><p>Built in Unity with C#, Sudoku provides the board state and a solve-step interface to player-written code. Players implement naked singles, hidden pairs, X-wings, and recursive backtracking — learning constraint satisfaction, search pruning, and the elegance of turning logic puzzles into executable code.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Sudoku"
+        },
+        {
+          "ID": "minesweeper",
+          "NAME": "💣 Minesweeper",
+          "MOTTO": "Deduce or Detonate",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/CodeGamified/minesweeper",
+          "TEXT": "<h3>The Idea</h3><p>Every click is a calculated risk — and your code makes the call. Minesweeper challenges players to write a deduction engine that clears the board using neighbor counts, constraint propagation, and probability when logic alone isn't enough.</p><h3>How It Works</h3><p>Built in Unity with C#, Minesweeper exposes the revealed board state and mine counts to player-written code. Players program safe-cell identification, flag placement, and probabilistic guessing strategies — learning constraint satisfaction, set intersection logic, and decision-making under uncertainty one square at a time.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Mine<br>sweeper"
+        },
+        {
+          "ID": "pool",
+          "NAME": "🎱 Pool",
+          "MOTTO": "Angle, Spin, Execute",
+          "DATE": "Spring 2025 - Present",
+          "GITHUB": "https://github.com/CodeGamified/pool",
+          "TEXT": "<h3>The Idea</h3><p>Every shot is a physics equation — your code solves it. Pool brings real billiards physics to a scripting layer where players program cue angle, force, and spin to sink balls with algorithmic precision. No loot boxes, no pay-to-win cues — just math.</p><h3>How It Works</h3><p>Built in Unity with C#, Pool exposes ball positions, velocities, table geometry, and friction coefficients to player-written code. Players program shot planning, multi-ball collision prediction, and positional play — learning 2D physics simulation, vector math, and optimization as they clear the table.</p>",
+          "domain": "games",
+          "source": "projects",
+          "quadrant": "games",
+          "shortname": "Pool"
+        },
+        {
           "ID": "searauber",
           "NAME": "🏴‍☠️ SeaRäuber",
           "MOTTO": "Logic Meets Fate",
