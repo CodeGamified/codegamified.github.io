@@ -4,7 +4,7 @@
 ║  mutilar.github.io on :8000  ·  bootfile.dev on :8080      ║
 ╚══════════════════════════════════════════════════════════════╝
 """
-import http.server, functools, threading, os, subprocess, sys, time, random, math
+import http.server, functools, threading, os, subprocess, sys, time, random, math, configparser
 from TUI import *  # noqa: F403 — includes strip_html, sanitize_emoji, etc.
 
 # ─────────────────────────────────────────────────────────────
@@ -860,16 +860,41 @@ def git_sync(result_box):
     if not os.path.exists(git_dir):
         step('Initializing repository', 'init')
 
-    # 1. Init submodules (idempotent if already initialized)
+    # 1. Sync submodule URLs from .gitmodules into .git/config
+    step('Syncing submodules', 'submodule', 'sync', '--recursive')
+
+    # 2. Add any submodules defined in .gitmodules but missing from the index
+    #    (handles entries added by hand rather than via `git submodule add`)
+    result_box[1] = 'Registering new submodules'
+    gitmodules_path = os.path.join(REPO_ROOT, '.gitmodules')
+    if os.path.isfile(gitmodules_path):
+        cfg = configparser.ConfigParser()
+        cfg.read(gitmodules_path, encoding='utf-8')
+        seen_paths = set()
+        for section in cfg.sections():
+            sm_path = cfg.get(section, 'path', fallback=None)
+            sm_url = cfg.get(section, 'url', fallback=None)
+            if not sm_path or not sm_url or sm_path in seen_paths:
+                continue
+            seen_paths.add(sm_path)
+            abs_path = os.path.join(REPO_ROOT, sm_path)
+            # If the directory is missing or empty, the submodule needs adding
+            if not os.path.isdir(abs_path) or not os.listdir(abs_path):
+                ok, _out, _err = _git('submodule', 'add', '--force', sm_url, sm_path)
+                steps.append((f'Adding {sm_path}', ok))
+                if not ok:
+                    all_ok = False
+
+    # 3. Init submodules (idempotent if already initialized)
     step('Initializing submodules', 'submodule', 'init')
 
-    # 2. Update submodules recursively with remote tracking
+    # 4. Update submodules recursively with remote tracking
     step('Updating submodules', 'submodule', 'update', '--init', '--recursive', '--remote', '--merge')
 
-    # 3. Fetch all remotes
+    # 5. Fetch all remotes
     step('Fetching remotes', 'fetch', '--all', '--prune')
 
-    # 4. Pull with fast-forward only (safe; fails if diverged)
+    # 6. Pull with fast-forward only (safe; fails if diverged)
     step('Pulling latest', 'pull', '--ff-only')
 
     result_box[2] = steps

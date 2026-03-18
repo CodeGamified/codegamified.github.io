@@ -19,9 +19,6 @@
 [submodule "midi"]
 	path = midi
 	url = https://github.com/CodeGamified/midi.git
-[submodule "bootstrap"]
-	path = bootstrap
-	url = https://github.com/CodeGamified/.bootstrap.git
 [submodule "bird"]
 	path = bird
 	url = https://github.com/CodeGamified/bird.git
