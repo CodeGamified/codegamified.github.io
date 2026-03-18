@@ -1,18 +1,36 @@
 [submodule ".github"]
 	path = .github
 	url = https://github.com/CodeGamified/.github.git
-[submodule "pong"]
-	path = pong
-	url = https://github.com/CodeGamified/pong.git
+[submodule ".engine"]
+	path = .engine
+	url = https://github.com/BOOTFILE-dev/.engine
+[submodule ".bootstrap"]
+	path = bootstrap
+	url = https://github.com/CodeGamified/.bootstrap.git
 [submodule ".data"]
 	path = .data
 	url = https://github.com/CodeGamified/.data.git
+[submodule "pong"]
+	path = pong
+	url = https://github.com/CodeGamified/pong.git
 [submodule "tanks"]
 	path = tanks
 	url = https://github.com/CodeGamified/tanks.git
 [submodule "midi"]
 	path = midi
 	url = https://github.com/CodeGamified/midi.git
-[submodule ".engine"]
-	path = .engine
-	url = https://github.com/BOOTFILE-dev/.engine
+[submodule "bootstrap"]
+	path = bootstrap
+	url = https://github.com/CodeGamified/.bootstrap.git
+[submodule "bird"]
+	path = bird
+	url = https://github.com/CodeGamified/bird.git
+[submodule "snake"]
+	path = snake
+	url = https://github.com/CodeGamified/snake.git
+[submodule "asteroids"]
+	path = asteroids
+	url = https://github.com/CodeGamified/asteroids.git
+[submodule "tetris"]
+	path = tetris
+	url = https://github.com/CodeGamified/tetris.git
