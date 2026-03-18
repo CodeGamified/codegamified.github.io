@@ -31,3 +31,30 @@
 [submodule "tetris"]
 	path = tetris
 	url = https://github.com/CodeGamified/tetris.git
+[submodule "minesweeper"]
+	path = minesweeper
+	url = https://github.com/CodeGamified/minesweeper.git
+[submodule "breakout"]
+	path = breakout
+	url = https://github.com/CodeGamified/breakout.git
+[submodule "checkers"]
+	path = checkers
+	url = https://github.com/CodeGamified/checkers.git
+[submodule "chess"]
+	path = chess
+	url = https://github.com/CodeGamified/chess.git
+[submodule "blackjack"]
+	path = blackjack
+	url = https://github.com/CodeGamified/blackjack.git
+[submodule "pool"]
+	path = pool
+	url = https://github.com/CodeGamified/pool.git
+[submodule "poker"]
+	path = poker
+	url = https://github.com/CodeGamified/poker.git
+[submodule "racer"]
+	path = racer
+	url = https://github.com/CodeGamified/racer.git
+[submodule "fighter"]
+	path = fighter
+	url = https://github.com/CodeGamified/fighter.git
