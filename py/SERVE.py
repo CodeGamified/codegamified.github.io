@@ -836,7 +836,7 @@ def _git(*args):
         return (False, '', str(e))
 
 def git_sync(result_box):
-    """Full git sync: init submodules, fetch, pull (no push).
+    """Full git sync: ensure repo is initialized, init submodules, fetch, pull.
 
     result_box protocol:
       [0] = None while running; True/False when done (overall success)
@@ -855,11 +855,16 @@ def git_sync(result_box):
             all_ok = False
         return ok
 
+    # 0. Ensure this is a git repo (idempotent — safe on existing repos)
+    git_dir = os.path.join(REPO_ROOT, '.git')
+    if not os.path.exists(git_dir):
+        step('Initializing repository', 'init')
+
     # 1. Init submodules (idempotent if already initialized)
     step('Initializing submodules', 'submodule', 'init')
 
-    # 2. Update submodules with remote tracking
-    step('Updating submodules', 'submodule', 'update', '--init', '--remote', '--merge')
+    # 2. Update submodules recursively with remote tracking
+    step('Updating submodules', 'submodule', 'update', '--init', '--recursive', '--remote', '--merge')
 
     # 3. Fetch all remotes
     step('Fetching remotes', 'fetch', '--all', '--prune')
