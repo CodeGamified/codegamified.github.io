@@ -37,11 +37,10 @@
             "imgAlt": "Arcade",
             "togglers": [
               { "label": "PONG",      "dot": "🏓", "active": true, "src": "png/pong.gif",      "accent": 1, "gameUrl": "builds/pong/index.html",      "gameTitle": "🏓 Pong",      "gameW": 960, "gameH": 600 },
+              { "label": "BREAKOUT",  "dot": "💥", "src": "png/breakout.gif",  "accent": 1, "gameUrl": "builds/breakout/index.html",  "gameTitle": "💥 Breakout",  "gameW": 960, "gameH": 600 },
+              { "label": "ASTEROIDS", "dot": "☄️", "src": "png/asteroids.gif", "accent": 4, "gameUrl": "builds/asteroids/index.html", "gameTitle": "☄️ Asteroids", "gameW": 960, "gameH": 600 },
               { "label": "SNAKE",     "dot": "🐍", "src": "png/snake.gif",     "accent": 2, "gameUrl": "builds/snake/index.html",     "gameTitle": "🐍 Snake",     "gameW": 960, "gameH": 600 },
               { "label": "BIRD",      "dot": "🐦", "src": "png/bird.gif",      "accent": 3, "gameUrl": "builds/bird/index.html",      "gameTitle": "🐦 Bird",      "gameW": 960, "gameH": 600 },
-              { "label": "ASTEROIDS", "dot": "☄️", "src": "png/asteroids.gif", "accent": 4, "gameUrl": "builds/asteroids/index.html", "gameTitle": "☄️ Asteroids", "gameW": 960, "gameH": 600 },
-              { "label": "BREAKOUT",  "dot": "💥", "src": "png/breakout.gif",  "accent": 1, "gameUrl": "builds/breakout/index.html",  "gameTitle": "💥 Breakout",  "gameW": 960, "gameH": 600 },
-              { "label": "RACER",     "dot": "🏎️", "src": "png/racer.gif",     "accent": 2, "gameUrl": "builds/racer/index.html",     "gameTitle": "🏎️ Racer",     "gameW": 960, "gameH": 600 }
             ]
           },
           {
@@ -68,8 +67,7 @@
               { "label": "CHESS",     "dot": "♟️", "active": true, "src": "png/chess.gif",     "accent": 1, "gameUrl": "builds/chess/index.html",     "gameTitle": "♟️ Chess",     "gameW": 960, "gameH": 600 },
               { "label": "CHECKERS",  "dot": "⛃",  "src": "png/checkers.gif",  "accent": 2, "gameUrl": "builds/checkers/index.html",  "gameTitle": "⛃ Checkers",  "gameW": 960, "gameH": 600 },
               { "label": "POKER",     "dot": "🃏", "src": "png/poker.gif",     "accent": 3, "gameUrl": "builds/poker/index.html",     "gameTitle": "🃏 Poker",     "gameW": 960, "gameH": 600 },
-              { "label": "BLACKJACK", "dot": "🂡",  "src": "png/blackjack.gif", "accent": 4, "gameUrl": "builds/blackjack/index.html", "gameTitle": "🂡 Blackjack", "gameW": 960, "gameH": 600 },
-              { "label": "POOL",      "dot": "🎱", "src": "png/pool.gif",      "accent": 1, "gameUrl": "builds/pool/index.html",      "gameTitle": "🎱 Pool",      "gameW": 960, "gameH": 600 }
+              { "label": "BLACKJACK", "dot": "🂡",  "src": "png/blackjack.gif", "accent": 4, "gameUrl": "builds/blackjack/index.html", "gameTitle": "🂡 Blackjack", "gameW": 960, "gameH": 600 }
             ]
           },
           {
@@ -79,9 +77,23 @@
             "action": "play",
             "img": "png/tanks.gif",
             "imgAlt": "Combat",
-            "togglers": [
+            "togglers": [ 
+              { "label": "ROYALE",   "dot": "👑", "active": true, "src": "png/royale.gif",   "accent": 1, "gameUrl": "builds/royale/index.html",   "gameTitle": "🪖 Royale",   "gameW": 960, "gameH": 600 },
               { "label": "TANKS",   "dot": "🪖", "active": true, "src": "png/tanks.gif",   "accent": 1, "gameUrl": "builds/tanks/index.html",   "gameTitle": "🪖 Tanks",   "gameW": 960, "gameH": 600 },
               { "label": "FIGHTER", "dot": "🥊", "src": "png/fighter.gif", "accent": 2, "gameUrl": "builds/fighter/index.html", "gameTitle": "🥊 Fighter", "gameW": 960, "gameH": 600 }
+            ]
+          },
+          {
+            "emoji": "🌍",
+            "label": "Sim",
+            "ariaLabel": "Play simulator games",
+            "action": "play",
+            "img": "png/midi.gif",
+            "imgAlt": "Sandbox",
+            "togglers": [              
+              { "label": "RACER", "dot": "🏎️", "src": "png/racer.gif",     "accent": 2, "gameUrl": "builds/racer/index.html",     "gameTitle": "🏎️ Racer",     "gameW": 960, "gameH": 600 },
+              { "label": "POOL",  "dot": "🎱", "src": "png/pool.gif",      "accent": 1, "gameUrl": "builds/pool/index.html",      "gameTitle": "🎱 Pool",      "gameW": 960, "gameH": 600 },
+              { "label": "MIDI",  "dot": "🎹", "active": true, "src": "png/midi.gif",      "accent": 1, "gameUrl": "builds/midi/index.html",      "gameTitle": "🎹 Midi",      "gameW": 960, "gameH": 600 }
             ]
           },
           {
@@ -92,34 +104,11 @@
             "img": "png/midi.gif",
             "imgAlt": "Sandbox",
             "togglers": [
-              { "label": "MIDI",      "dot": "🎹", "active": true, "src": "png/midi.gif",      "accent": 1, "gameUrl": "builds/midi/index.html",      "gameTitle": "🎹 Midi",      "gameW": 960, "gameH": 600 },
-              { "label": "DWARF",     "dot": "⛏️", "src": "png/dwarf.gif",     "accent": 2, "gameUrl": "builds/dwarf/index.html",     "gameTitle": "⛏️ Dwarf",     "gameW": 960, "gameH": 600 },
-              { "label": "MINECRAFT", "dot": "⛏",  "src": "png/minecraft.gif", "accent": 3, "gameUrl": "builds/minecraft/index.html", "gameTitle": "⛏ Minecraft", "gameW": 960, "gameH": 600 },
               { "label": "POPVUJ",    "dot": "🌋", "src": "png/popvuj.gif",    "accent": 4, "gameUrl": "builds/popvuj/index.html",    "gameTitle": "🌋 PopVuj",    "gameW": 960, "gameH": 600 },
-              { "label": "AUFSTAND",  "dot": "⚔️", "src": "png/aufstand.gif",  "accent": 1, "gameUrl": "builds/aufstand/index.html",  "gameTitle": "⚔️ Aufstand",  "gameW": 960, "gameH": 600 }
+              { "label": "DWARF",     "dot": "⛏️", "src": "png/dwarf.gif",     "accent": 2, "gameUrl": "builds/dwarf/index.html",     "gameTitle": "⛏️ Dwarf",     "gameW": 960, "gameH": 600 },
+              { "label": "MINECRAFT", "dot": "⛏",  "src": "png/minecraft.gif", "accent": 3, "gameUrl": "builds/minecraft/index.html", "gameTitle": "⛏ Minecraft", "gameW": 960, "gameH": 600 }
             ]
           }
-        ]
-      },
-      {
-        "type": "detail",
-        "label": "⚙️ Engine",
-        "actionBadge": "<i class=\"fa fa-github\"></i> CodeGamified/.engine",
-        "actionBadgeStatic": true,
-        "href": "https://github.com/CodeGamified/.engine",
-        "external": true,
-        "action": "mermaid",
-        "actionTarget": "ARCH.md",
-        "ariaLabel": "Open Engine Architecture Diagrams",
-        "details": [
-          { "icon": "fa fa-microchip",    "title": "Core",      "desc": "<code>Bootstrap</code> · <code>Engine</code> · <code>Time</code>" },
-          { "icon": "fa fa-terminal",     "title": "Control",  "desc": "<code>TUI</code> · <code>Editor</code>" },
-          { "icon": "fa fa-cubes",        "title": "Assets",      "desc": "<code>Procedural</code> · <code>Camera</code> · <code>Audio</code>" },
-          { "icon": "fa fa-database",     "title": "State",     "desc": "<code>Persistence</code> · <code>Quality</code> · <code>Settings</code>" }
-        ],
-        "detailRow": [
-          { "icon": "fa fa-code-fork",     "title": "SUBMODULE: git" },
-          { "icon": "fa fa-puzzle-piece",  "title": "11 MODULES" }
         ]
       }
     ],
