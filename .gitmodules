@@ -76,3 +76,9 @@
 [submodule "royale"]
 	path = royale
 	url = https://github.com/CodeGamified/royale.git
+[submodule "traffic"]
+	path = traffic
+	url = https://github.com/CodeGamified/traffic.git
+[submodule "bomber"]
+	path = bomber
+	url = https://github.com/CodeGamified/bomber.git
