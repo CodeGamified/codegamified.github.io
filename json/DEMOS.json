@@ -29,16 +29,74 @@
         "wide": true,
         "tiles": [
           {
-            "emoji": "🎮",
-            "label": "Play Me!",
-            "ariaLabel": "Play a demo",
+            "emoji": "🕹️",
+            "label": "Arcade",
+            "ariaLabel": "Play arcade games",
             "action": "play",
             "img": "png/pong.gif",
-            "imgAlt": "Demos",
+            "imgAlt": "Arcade",
             "togglers": [
-                    { "label": "PONG",  "dot": "🏓", "active": true, "src": "png/pong.gif", "accent": 1, "gameUrl": "builds/pong/index.html", "gameTitle": "🏓 Pong", "gameW": 960, "gameH": 600 },
-                    { "label": "MIDI",  "dot": "🎹", "accent": 2, "gameUrl": "builds/midi/index.html", "gameTitle": "🎹 Midi", "gameW": 960, "gameH": 600 },
-                    { "label": "TANKS", "dot": "🪖", "accent": 3, "gameUrl": "builds/tanks/index.html", "gameTitle": "🪖 Tanks", "gameW": 960, "gameH": 600 }
+              { "label": "PONG",      "dot": "🏓", "active": true, "src": "png/pong.gif",      "accent": 1, "gameUrl": "builds/pong/index.html",      "gameTitle": "🏓 Pong",      "gameW": 960, "gameH": 600 },
+              { "label": "SNAKE",     "dot": "🐍", "src": "png/snake.gif",     "accent": 2, "gameUrl": "builds/snake/index.html",     "gameTitle": "🐍 Snake",     "gameW": 960, "gameH": 600 },
+              { "label": "BIRD",      "dot": "🐦", "src": "png/bird.gif",      "accent": 3, "gameUrl": "builds/bird/index.html",      "gameTitle": "🐦 Bird",      "gameW": 960, "gameH": 600 },
+              { "label": "ASTEROIDS", "dot": "☄️", "src": "png/asteroids.gif", "accent": 4, "gameUrl": "builds/asteroids/index.html", "gameTitle": "☄️ Asteroids", "gameW": 960, "gameH": 600 },
+              { "label": "BREAKOUT",  "dot": "💥", "src": "png/breakout.gif",  "accent": 1, "gameUrl": "builds/breakout/index.html",  "gameTitle": "💥 Breakout",  "gameW": 960, "gameH": 600 },
+              { "label": "RACER",     "dot": "🏎️", "src": "png/racer.gif",     "accent": 2, "gameUrl": "builds/racer/index.html",     "gameTitle": "🏎️ Racer",     "gameW": 960, "gameH": 600 }
+            ]
+          },
+          {
+            "emoji": "🧩",
+            "label": "Puzzle",
+            "ariaLabel": "Play puzzle games",
+            "action": "play",
+            "img": "png/tetris.gif",
+            "imgAlt": "Puzzle",
+            "togglers": [
+              { "label": "TETRIS",      "dot": "🧱", "active": true, "src": "png/tetris.gif",      "accent": 1, "gameUrl": "builds/tetris/index.html",      "gameTitle": "🧱 Tetris",      "gameW": 960, "gameH": 600 },
+              { "label": "MINESWEEPER", "dot": "💣", "src": "png/minesweeper.gif", "accent": 2, "gameUrl": "builds/minesweeper/index.html", "gameTitle": "💣 Minesweeper", "gameW": 960, "gameH": 600 },
+              { "label": "CONNECT 4",   "dot": "🔴", "src": "png/connect4.gif",    "accent": 3, "gameUrl": "builds/connect4/index.html",    "gameTitle": "🔴 Connect 4",   "gameW": 960, "gameH": 600 }
+            ]
+          },
+          {
+            "emoji": "🎲",
+            "label": "Table",
+            "ariaLabel": "Play table games",
+            "action": "play",
+            "img": "png/chess.gif",
+            "imgAlt": "Table",
+            "togglers": [
+              { "label": "CHESS",     "dot": "♟️", "active": true, "src": "png/chess.gif",     "accent": 1, "gameUrl": "builds/chess/index.html",     "gameTitle": "♟️ Chess",     "gameW": 960, "gameH": 600 },
+              { "label": "CHECKERS",  "dot": "⛃",  "src": "png/checkers.gif",  "accent": 2, "gameUrl": "builds/checkers/index.html",  "gameTitle": "⛃ Checkers",  "gameW": 960, "gameH": 600 },
+              { "label": "POKER",     "dot": "🃏", "src": "png/poker.gif",     "accent": 3, "gameUrl": "builds/poker/index.html",     "gameTitle": "🃏 Poker",     "gameW": 960, "gameH": 600 },
+              { "label": "BLACKJACK", "dot": "🂡",  "src": "png/blackjack.gif", "accent": 4, "gameUrl": "builds/blackjack/index.html", "gameTitle": "🂡 Blackjack", "gameW": 960, "gameH": 600 },
+              { "label": "POOL",      "dot": "🎱", "src": "png/pool.gif",      "accent": 1, "gameUrl": "builds/pool/index.html",      "gameTitle": "🎱 Pool",      "gameW": 960, "gameH": 600 }
+            ]
+          },
+          {
+            "emoji": "⚔️",
+            "label": "Combat",
+            "ariaLabel": "Play combat games",
+            "action": "play",
+            "img": "png/tanks.gif",
+            "imgAlt": "Combat",
+            "togglers": [
+              { "label": "TANKS",   "dot": "🪖", "active": true, "src": "png/tanks.gif",   "accent": 1, "gameUrl": "builds/tanks/index.html",   "gameTitle": "🪖 Tanks",   "gameW": 960, "gameH": 600 },
+              { "label": "FIGHTER", "dot": "🥊", "src": "png/fighter.gif", "accent": 2, "gameUrl": "builds/fighter/index.html", "gameTitle": "🥊 Fighter", "gameW": 960, "gameH": 600 }
+            ]
+          },
+          {
+            "emoji": "🌍",
+            "label": "Sandbox",
+            "ariaLabel": "Play sandbox games",
+            "action": "play",
+            "img": "png/midi.gif",
+            "imgAlt": "Sandbox",
+            "togglers": [
+              { "label": "MIDI",      "dot": "🎹", "active": true, "src": "png/midi.gif",      "accent": 1, "gameUrl": "builds/midi/index.html",      "gameTitle": "🎹 Midi",      "gameW": 960, "gameH": 600 },
+              { "label": "DWARF",     "dot": "⛏️", "src": "png/dwarf.gif",     "accent": 2, "gameUrl": "builds/dwarf/index.html",     "gameTitle": "⛏️ Dwarf",     "gameW": 960, "gameH": 600 },
+              { "label": "MINECRAFT", "dot": "⛏",  "src": "png/minecraft.gif", "accent": 3, "gameUrl": "builds/minecraft/index.html", "gameTitle": "⛏ Minecraft", "gameW": 960, "gameH": 600 },
+              { "label": "POPVUJ",    "dot": "🌋", "src": "png/popvuj.gif",    "accent": 4, "gameUrl": "builds/popvuj/index.html",    "gameTitle": "🌋 PopVuj",    "gameW": 960, "gameH": 600 },
+              { "label": "AUFSTAND",  "dot": "⚔️", "src": "png/aufstand.gif",  "accent": 1, "gameUrl": "builds/aufstand/index.html",  "gameTitle": "⚔️ Aufstand",  "gameW": 960, "gameH": 600 }
             ]
           }
         ]
