@@ -3,14 +3,14 @@
     "name": "Code Gamified",
     "emoji": "🕹",
     "portrait": "png/cg.png",
-    "tagline": "WRITE real CODE.<br>CONTROL the GAME.<br>LEARN by PLAYING.",
+    "tagline": "WRITE CODE;<br>CONTROL GAMES;<br>LEARN PLAYING!",
     "jobTitle": null,
     "organization": "Code Gamified"
   },
   "seo": {
-    "title": "Code Gamified — WRITE real CODE. CONTROL the GAME. LEARN by PLAYING.",
-    "description": "Open-source boilerplate for building educational coding video games in Unity. Players write real code to control in-game systems.",
-    "ogTitle": "Code Gamified — WRITE real CODE. CONTROL the GAME. LEARN by PLAYING.",
+    "title": "Code Gamified — WRITE CODE; CONTROL GAMES; LEARN PLAYING!",
+    "description": "Open-source boilerplate for building educational coding video games. Players write real code to control in-game systems.",
+    "ogTitle": "Code Gamified — WRITE CODE; CONTROL GAMES; LEARN PLAYING!",
     "ogDescription": "Open-source Unity boilerplate: players write real Python to control satellites, ships, robots. Compiler, VM, terminal UI, time simulation — all included.",
     "ogImage": null,
     "ogUrl": "https://codegamified.github.io/",
