@@ -58,3 +58,15 @@
 [submodule "fighter"]
 	path = fighter
 	url = https://github.com/CodeGamified/fighter.git
+[submodule "aufstand"]
+	path = aufstand
+	url = https://github.com/CodeGamified/aufstand.git
+[submodule "popvuj"]
+	path = popvuj
+	url = https://github.com/CodeGamified/popvuj.git
+[submodule "dwarf"]
+	path = dwarf
+	url = https://github.com/CodeGamified/dwarf.git
+[submodule "minecraft"]
+	path = minecraft
+	url = https://github.com/CodeGamified/minecraft.git
