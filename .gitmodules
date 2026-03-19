@@ -70,3 +70,9 @@
 [submodule "minecraft"]
 	path = minecraft
 	url = https://github.com/CodeGamified/minecraft.git
+[submodule "golf"]
+	path = golf
+	url = https://github.com/CodeGamified/golf.git
+[submodule "royale"]
+	path = royale
+	url = https://github.com/CodeGamified/royale.git
