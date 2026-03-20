@@ -82,3 +82,6 @@
 [submodule "bomber"]
 	path = bomber
 	url = https://github.com/CodeGamified/bomber.git
+[submodule "galaga"]
+	path = galaga
+	url = https://github.com/CodeGamified/galaga.git
