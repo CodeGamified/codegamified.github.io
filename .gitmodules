@@ -85,3 +85,6 @@
 [submodule "galaga"]
 	path = galaga
 	url = https://github.com/CodeGamified/galaga.git
+[submodule "rubik"]
+	path = rubik
+	url = https://github.com/CodeGamified/rubik.git
