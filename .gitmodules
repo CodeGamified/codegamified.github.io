@@ -88,3 +88,9 @@
 [submodule "rubik"]
 	path = rubik
 	url = https://github.com/CodeGamified/rubik.git
+[submodule "space"]
+	path = space
+	url = https://github.com/CodeGamified/space.git
+[submodule "invade"]
+	path = invade
+	url = https://github.com/CodeGamified/invade.git
