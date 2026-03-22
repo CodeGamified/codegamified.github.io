@@ -3,3 +3,42 @@ mp3/
 builds/
 LICENSE.txt
 CNAME
+
+popvuj/PopVuj/Library/PackageCache
+popvuj/PopVuj/Assets/Resources/
+popvuj/PopVuj/Assets/TextMesh Pro
+popvuj/PopVuj/Temp
+popvuj/PopVuj/Logs
+popvuj/PopVuj/Library
+
+# [FOCUS.py] BEGIN
+asteroids/
+aufstand/
+bird/
+blackjack/
+bomber/
+bootstrap/
+breakout/
+checkers/
+chess/
+connect/
+dwarf/
+fighter/
+galaga/
+golf/
+invade/
+midi/
+minecraft/
+minesweeper/
+poker/
+pong/
+pool/
+racer/
+royale/
+rubik/
+snake/
+space/
+tanks/
+tetris/
+traffic/
+# [FOCUS.py] END
