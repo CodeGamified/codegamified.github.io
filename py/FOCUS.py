@@ -27,7 +27,7 @@ COPILOTIGNORE_PATH  = os.path.join(REPO_ROOT, '.copilotignore')
 MARKER = '# [FOCUS.py]'
 
 # Always ignored in .copilotignore regardless of focus
-COPILOT_ALWAYS = ['png/', 'mp3/', 'builds/', 'LICENSE.txt', 'CNAME']
+COPILOT_ALWAYS = ['.data/', '.engine/', 'png/', 'mp3/', 'builds/', 'LICENSE.txt', 'CNAME']
 
 # Heavy Unity dirs to ignore even within focused projects (per-project .copilotignore)
 UNITY_NOISE = [
