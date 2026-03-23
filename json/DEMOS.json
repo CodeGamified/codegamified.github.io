@@ -30,7 +30,7 @@
         "tiles": [
           {
             "emoji": "🕹️",
-            "label": "Arcade",
+            "label": "",
             "ariaLabel": "Play arcade games",
             "action": "play",
             "img": "png/pong.gif",
@@ -45,7 +45,7 @@
           },
           {
             "emoji": "🧩",
-            "label": "Puzzle",
+            "label": "",
             "ariaLabel": "Play puzzle games",
             "action": "play",
             "img": "png/tetris.gif",
@@ -58,7 +58,7 @@
           },
           {
             "emoji": "🎲",
-            "label": "Table",
+            "label": "",
             "ariaLabel": "Play table games",
             "action": "play",
             "img": "png/chess.gif",
@@ -72,7 +72,7 @@
           },
           {
             "emoji": "⚔️",
-            "label": "Combat",
+            "label": "",
             "ariaLabel": "Play combat games",
             "action": "play",
             "img": "png/galaga.gif",
@@ -86,7 +86,7 @@
           },
           {
             "emoji": "🌍",
-            "label": "Sim",
+            "label": "",
             "ariaLabel": "Play simulator games",
             "action": "play",
             "img": "png/pool.gif",
@@ -98,8 +98,8 @@
             ]
           },
           {
-            "emoji": "🌍",
-              "label": "Sandbox",
+            "emoji": "🏖️",
+              "label": "",
               "ariaLabel": "Play sandbox games",
               "action": "play",
               "img": "png/popvuj.gif",
