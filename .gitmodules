@@ -94,3 +94,6 @@
 [submodule "invade"]
 	path = invade
 	url = https://github.com/CodeGamified/invade.git
+[submodule ".substack"]
+	path = .substack
+	url = https://github.com/CodeGamified/.substack.git
