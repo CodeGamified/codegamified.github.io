@@ -1,0 +1,62 @@
+{
+  "index": 1,
+  "nav": {
+    "href": "#about",
+    "label": "About"
+  },
+  "header": {
+    "id": "about",
+    "heading": "👋🏻 Hello, World!",
+    "badges": [
+      { "label": "GitHub", "icon": "fa fa-github", "href": "https://github.com/CodeGamified", "glow": true }
+    ],
+    "attention": 0,
+    "intro": {
+      "img": "png/cg.png",
+      "alt": "Brian Hungerman",
+      "steps": [
+        { "align": "left",   "html": "From reinvisioning <strong>Pong</strong>, <strong>Space Invaders</strong>, <strong>Galaga</strong> & <strong>Tetris</strong> ..." },
+        { "align": "center", "html": "...to rethinking <strong>Checkers</strong>, <strong>Chess</strong>, <strong>Blackjack</strong> & <strong>Solitaire</strong>..." },
+        { "align": "right",  "html": "...to fresh new ideas like <strong>BitNaughts</strong>, <strong>PopVuj</strong>, <strong>Aufstand</strong> & <strong>SeaRauber</strong>;" }
+      ],
+      "summary": "<strong>Code Gamified</strong> flips the script: learning to code can be as fun as playing games!"
+    },
+    "headerItems": [
+      {
+        "type": "viz",
+        "id": "viz-cards",
+        "wide": true,
+        "style": "margin-bottom:32px;",
+        "tiles": [
+          {
+            "emoji": "🧭",
+            "label": "SKILLTREE",
+            "ariaLabel": "Open Graph of Knowledge",
+            "action": "open",
+            "img": "png/graph.png",
+            "imgAlt": "Graph of Knowledge",
+            "togglers": [
+              { "label": "GAMES", "dot": "🔵", "active": true, "src": "png/graph.png", "accent": 1, "open": "knowledgeModal" }
+            ]
+          },
+          {
+            "emoji": "🕰️",
+            "label": "ROADMAP",
+            "ariaLabel": "See more in Timeline",
+            "action": "open",
+            "img": "png/timeline.png",
+            "imgAlt": "Timeline",
+            "togglers": [
+              { "label": "GAMES", "dot": "🔵", "active": true, "src": "png/timeline.png", "accent": 1, "open": "timelineModal" }
+            ]
+          }
+        ]
+      }
+    ],
+    "scrollHint": {
+      "target": "#demos",
+      "label": "Demos",
+      "arrow": "🕹️"
+    }
+  }
+}

@@ -113,6 +113,7 @@
     "path": "json/",
     "sources": [
       "HERO.json",
+      "ABOUT.json",
       "DEMOS.json",
       "GAMES.json",
       "OPENSOURCE.json",

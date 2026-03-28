@@ -10,9 +10,9 @@
     "accentOrder": "1,2,3,4",
     "portraitAction": "openModal('biography')",
     "scrollHint": {
-      "target": "#demos",
-      "label": "DEMOS",
-      "arrow": "🕹"
+      "target": "#about",
+      "label": "ABOUT",
+      "arrow": "👋🏻"
     }
   }
 }

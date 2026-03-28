@@ -24,6 +24,53 @@
     },
     "headerItems": [
       {
+        "type": "filter",
+        "id": "demos-filter",
+        "wide": true,
+        "target": "viz-cards",
+        "axes": [
+          {
+            "key": "genre",
+            "label": "Genre",
+            "accent": 1,
+            "options": [
+              { "value": "all",       "label": "ALL",       "dot": "🎮", "active": true },
+              { "value": "arcade",    "label": "ARCADE",    "dot": "🕹️" },
+              { "value": "puzzle",    "label": "PUZZLE",    "dot": "🧩" },
+              { "value": "table",     "label": "TABLE",     "dot": "🎲" },
+              { "value": "combat",    "label": "COMBAT",    "dot": "⚔️" },
+              { "value": "simulator", "label": "SIMULATOR", "dot": "🌍" },
+              { "value": "sandbox",   "label": "SANDBOX",   "dot": "🏖️" }
+            ]
+          },
+          {
+            "key": "decade",
+            "label": "Era",
+            "accent": 2,
+            "options": [
+              { "value": "all", "label": "ALL", "dot": "📅", "active": true },
+              { "value": "70s", "label": "70's", "dot": "🕺" },
+              { "value": "80s", "label": "80's", "dot": "👾" },
+              { "value": "90s", "label": "90's", "dot": "💾" },
+              { "value": "00s", "label": "00's", "dot": "💿" },
+              { "value": "10s", "label": "10's", "dot": "📱" },
+              { "value": "20s", "label": "20's", "dot": "🤖" }
+            ]
+          },
+          {
+            "key": "players",
+            "label": "Players",
+            "accent": 3,
+            "options": [
+              { "value": "all", "label": "ALL", "dot": "👥", "active": true },
+              { "value": "1p",  "label": "1P",  "dot": "🧑" },
+              { "value": "2p",  "label": "2P",  "dot": "👫" },
+              { "value": "np",  "label": "NP",  "dot": "👨‍👩‍👧‍👦" }
+            ]
+          }
+        ]
+      },
+      {
         "type": "viz",
         "id": "viz-cards",
         "wide": true,
@@ -36,11 +83,11 @@
             "img": "png/pong.gif",
             "imgAlt": "Arcade",
             "togglers": [
-              { "label": "PONG",      "dot": "🏓", "active": true, "src": "png/pong.gif",      "accent": 1, "gameUrl": "builds/pong/index.html",      "gameTitle": "🏓",      "gameW": 960, "gameH": 600 },
-              { "label": "BREAKOUT",  "dot": "💥", "src": "png/breakout.gif",  "accent": 1, "gameUrl": "builds/breakout/index.html",  "gameTitle": "💥",  "gameW": 960, "gameH": 600 },
-              { "label": "ASTEROIDS", "dot": "☄️", "src": "png/asteroids.gif", "accent": 4, "gameUrl": "builds/asteroids/index.html", "gameTitle": "☄️", "gameW": 960, "gameH": 600 },
-              { "label": "SNAKE",     "dot": "🐍", "src": "png/snake.gif",     "accent": 2, "gameUrl": "builds/snake/index.html",     "gameTitle": "🐍",     "gameW": 960, "gameH": 600 },
-              { "label": "BIRD",      "dot": "🐦", "src": "png/bird.gif",      "accent": 3, "gameUrl": "builds/bird/index.html",      "gameTitle": "🐦",      "gameW": 960, "gameH": 600 }
+              { "label": "PONG",      "dot": "🏓", "active": true, "src": "png/pong.gif",      "accent": 1, "gameUrl": "builds/pong/index.html",      "gameTitle": "🏓",      "gameW": 960, "gameH": 600, "tags": { "genre": "arcade", "decade": "70s", "players": "2p" } },
+              { "label": "BREAKOUT",  "dot": "💥", "src": "png/breakout.gif",  "accent": 1, "gameUrl": "builds/breakout/index.html",  "gameTitle": "💥",  "gameW": 960, "gameH": 600, "tags": { "genre": "arcade", "decade": "70s", "players": "1p" } },
+              { "label": "ASTEROIDS", "dot": "☄️", "src": "png/asteroids.gif", "accent": 4, "gameUrl": "builds/asteroids/index.html", "gameTitle": "☄️", "gameW": 960, "gameH": 600, "tags": { "genre": "arcade", "decade": "70s", "players": "1p" } },
+              { "label": "SNAKE",     "dot": "🐍", "src": "png/snake.gif",     "accent": 2, "gameUrl": "builds/snake/index.html",     "gameTitle": "🐍",     "gameW": 960, "gameH": 600, "tags": { "genre": "arcade", "decade": "70s", "players": "1p" } },
+              { "label": "BIRD",      "dot": "🐦", "src": "png/bird.gif",      "accent": 3, "gameUrl": "builds/bird/index.html",      "gameTitle": "🐦",      "gameW": 960, "gameH": 600, "tags": { "genre": "arcade", "decade": "10s", "players": "1p" } }
             ]
           },
           {
@@ -51,9 +98,9 @@
             "img": "png/tetris.gif",
             "imgAlt": "Puzzle",
             "togglers": [
-              { "label": "TETRIS",      "dot": "🧱", "active": true, "src": "png/tetris.gif",      "accent": 1, "gameUrl": "builds/tetris/index.html",      "gameTitle": "🧱",      "gameW": 960, "gameH": 600 },
-              { "label": "MINESWEEPER", "dot": "💣", "src": "png/minesweeper.gif", "accent": 2, "gameUrl": "builds/minesweeper/index.html", "gameTitle": "💣", "gameW": 960, "gameH": 600 },
-              { "label": "CONNECT 4",   "dot": "🔴", "src": "png/connect4.gif",    "accent": 3, "gameUrl": "builds/connect4/index.html",    "gameTitle": "🔴",   "gameW": 960, "gameH": 600 }
+              { "label": "TETRIS",      "dot": "🧱", "active": true, "src": "png/tetris.gif",      "accent": 1, "gameUrl": "builds/tetris/index.html",      "gameTitle": "🧱",      "gameW": 960, "gameH": 600, "tags": { "genre": "puzzle", "decade": "80s", "players": "1p" } },
+              { "label": "MINESWEEPER", "dot": "💣", "src": "png/minesweeper.gif", "accent": 2, "gameUrl": "builds/minesweeper/index.html", "gameTitle": "💣", "gameW": 960, "gameH": 600, "tags": { "genre": "puzzle", "decade": "90s", "players": "1p" } },
+              { "label": "CONNECT 4",   "dot": "🔴", "src": "png/connect4.gif",    "accent": 3, "gameUrl": "builds/connect4/index.html",    "gameTitle": "🔴",   "gameW": 960, "gameH": 600, "tags": { "genre": "puzzle", "decade": "70s", "players": "2p" } }
             ]
           },
           {
@@ -64,10 +111,10 @@
             "img": "png/chess.gif",
             "imgAlt": "Table",
             "togglers": [
-              { "label": "CHESS",     "dot": "♟️", "active": true, "src": "png/chess.gif",     "accent": 1, "gameUrl": "builds/chess/index.html",     "gameTitle": "♟️",     "gameW": 960, "gameH": 600 },
-              { "label": "CHECKERS",  "dot": "⛃",  "src": "png/checkers.gif",  "accent": 2, "gameUrl": "builds/checkers/index.html",  "gameTitle": "⛃",  "gameW": 960, "gameH": 600 },
-              { "label": "POKER",     "dot": "🃏", "src": "png/poker.gif",     "accent": 3, "gameUrl": "builds/poker/index.html",     "gameTitle": "🃏",     "gameW": 960, "gameH": 600 },
-              { "label": "BLACKJACK", "dot": "🂡",  "src": "png/blackjack.gif", "accent": 4, "gameUrl": "builds/blackjack/index.html", "gameTitle": "🂡", "gameW": 960, "gameH": 600 }
+              { "label": "CHESS",     "dot": "♟️", "active": true, "src": "png/chess.gif",     "accent": 1, "gameUrl": "builds/chess/index.html",     "gameTitle": "♟️",     "gameW": 960, "gameH": 600, "tags": { "genre": "table", "decade": "70s", "players": "2p" } },
+              { "label": "CHECKERS",  "dot": "⛃",  "src": "png/checkers.gif",  "accent": 2, "gameUrl": "builds/checkers/index.html",  "gameTitle": "⛃",  "gameW": 960, "gameH": 600, "tags": { "genre": "table", "decade": "70s", "players": "2p" } },
+              { "label": "POKER",     "dot": "🃏", "src": "png/poker.gif",     "accent": 3, "gameUrl": "builds/poker/index.html",     "gameTitle": "🃏",     "gameW": 960, "gameH": 600, "tags": { "genre": "table", "decade": "80s", "players": "np" } },
+              { "label": "BLACKJACK", "dot": "🂡",  "src": "png/blackjack.gif", "accent": 4, "gameUrl": "builds/blackjack/index.html", "gameTitle": "🂡", "gameW": 960, "gameH": 600, "tags": { "genre": "table", "decade": "80s", "players": "1p" } }
             ]
           },
           {
@@ -77,11 +124,11 @@
             "action": "play",
             "img": "png/galaga.gif",
             "imgAlt": "Combat",
-            "togglers": [ 
-              { "label": "GALAGA",   "dot": "👾", "active": true, "src": "png/galaga.gif",   "accent": 1, "gameUrl": "builds/galaga/index.html",   "gameTitle": "👾",   "gameW": 960, "gameH": 600 },
-              { "label": "ROYALE",   "dot": "👑", "src": "png/royale.gif",   "accent": 1, "gameUrl": "builds/royale/index.html",   "gameTitle": "🪖",   "gameW": 960, "gameH": 600 },
-              { "label": "TANKS",   "dot": "🪖", "src": "png/tanks.gif",   "accent": 1, "gameUrl": "builds/tanks/index.html",   "gameTitle": "🪖",   "gameW": 960, "gameH": 600 },
-              { "label": "FIGHTER", "dot": "🥊", "src": "png/fighter.gif", "accent": 2, "gameUrl": "builds/fighter/index.html", "gameTitle": "🥊", "gameW": 960, "gameH": 600 }
+            "togglers": [
+              { "label": "GALAGA",   "dot": "👾", "active": true, "src": "png/galaga.gif",   "accent": 1, "gameUrl": "builds/galaga/index.html",   "gameTitle": "👾",   "gameW": 960, "gameH": 600, "tags": { "genre": "combat", "decade": "80s", "players": "1p" } },
+              { "label": "ROYALE",   "dot": "👑", "src": "png/royale.gif",   "accent": 1, "gameUrl": "builds/royale/index.html",   "gameTitle": "🪖",   "gameW": 960, "gameH": 600, "tags": { "genre": "combat", "decade": "20s", "players": "np" } },
+              { "label": "TANKS",   "dot": "🪖", "src": "png/tanks.gif",   "accent": 1, "gameUrl": "builds/tanks/index.html",   "gameTitle": "🪖",   "gameW": 960, "gameH": 600, "tags": { "genre": "combat", "decade": "70s", "players": "2p" } },
+              { "label": "FIGHTER", "dot": "🥊", "src": "png/fighter.gif", "accent": 2, "gameUrl": "builds/fighter/index.html", "gameTitle": "🥊", "gameW": 960, "gameH": 600, "tags": { "genre": "combat", "decade": "90s", "players": "2p" } }
             ]
           },
           {
@@ -91,10 +138,10 @@
             "action": "play",
             "img": "png/pool.gif",
             "imgAlt": "Sandbox",
-            "togglers": [              
-              { "label": "POOL",  "dot": "🎱", "src": "png/pool.gif", "active": true, "accent": 1, "gameUrl": "builds/pool/index.html",      "gameTitle": "🎱",      "gameW": 960, "gameH": 600 },
-              { "label": "RACER", "dot": "🏎️", "src": "png/racer.gif", "accent": 2, "gameUrl": "builds/racer/index.html",     "gameTitle": "🏎️",     "gameW": 960, "gameH": 600 },
-              { "label": "MIDI",  "dot": "🎹", "src": "png/midi.gif",  "accent": 1, "gameUrl": "builds/midi/index.html",      "gameTitle": "🎹",      "gameW": 960, "gameH": 600 }
+            "togglers": [
+              { "label": "POOL",  "dot": "🎱", "src": "png/pool.gif", "active": true, "accent": 1, "gameUrl": "builds/pool/index.html",      "gameTitle": "🎱",      "gameW": 960, "gameH": 600, "tags": { "genre": "simulator", "decade": "00s", "players": "2p" } },
+              { "label": "RACER", "dot": "🏎️", "src": "png/racer.gif", "accent": 2, "gameUrl": "builds/racer/index.html",     "gameTitle": "🏎️",     "gameW": 960, "gameH": 600, "tags": { "genre": "simulator", "decade": "80s", "players": "1p" } },
+              { "label": "MIDI",  "dot": "🎹", "src": "png/midi.gif",  "accent": 1, "gameUrl": "builds/midi/index.html",      "gameTitle": "🎹",      "gameW": 960, "gameH": 600, "tags": { "genre": "simulator", "decade": "20s", "players": "1p" } }
             ]
           },
           {
@@ -105,9 +152,9 @@
               "img": "png/popvuj.gif",
               "imgAlt": "Sandbox",
               "togglers": [
-              { "label": "POPVUJ",    "dot": "🌋", "src": "png/popvuj.gif", "active": true,  "accent": 4, "gameUrl": "builds/popvuj/index.html",    "gameTitle": "🌋 PopVuj",    "gameW": 960, "gameH": 600 },
-              { "label": "DWARF",     "dot": "⛏️", "src": "png/dwarf.gif",     "accent": 2, "gameUrl": "builds/dwarf/index.html",     "gameTitle": "⛏️ Dwarf",     "gameW": 960, "gameH": 600 },
-              { "label": "MINECRAFT", "dot": "⛏",  "src": "png/minecraft.gif", "accent": 3, "gameUrl": "builds/minecraft/index.html", "gameTitle": "⛏ Minecraft", "gameW": 960, "gameH": 600 }
+              { "label": "POPVUJ",    "dot": "🌋", "src": "png/popvuj.gif", "active": true,  "accent": 4, "gameUrl": "builds/popvuj/index.html",    "gameTitle": "🌋 PopVuj",    "gameW": 960, "gameH": 600, "tags": { "genre": "sandbox", "decade": "20s", "players": "1p" } },
+              { "label": "DWARF",     "dot": "⛏️", "src": "png/dwarf.gif",     "accent": 2, "gameUrl": "builds/dwarf/index.html",     "gameTitle": "⛏️ Dwarf",     "gameW": 960, "gameH": 600, "tags": { "genre": "sandbox", "decade": "00s", "players": "1p" } },
+              { "label": "MINECRAFT", "dot": "⛏",  "src": "png/minecraft.gif", "accent": 3, "gameUrl": "builds/minecraft/index.html", "gameTitle": "⛏ Minecraft", "gameW": 960, "gameH": 600, "tags": { "genre": "sandbox", "decade": "10s", "players": "np" } }
             ]
           }
         ]

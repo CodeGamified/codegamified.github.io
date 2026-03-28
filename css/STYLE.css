@@ -1,3 +1,66 @@
 /* ═══════════════════════════════════════════════════════════════
    STYLE.css — Site-specific style overrides for CodeGamified
    ═══════════════════════════════════════════════════════════════ */
+
+/* ── Filter bar (demos page) ──────────────────────────────── */
+.viz-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 16px 12px;
+  margin-bottom: 8px;
+}
+
+.filter-axis {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-axis-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-right: 2px;
+}
+
+html.light-mode .filter-axis-label {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.filter-btn {
+  font-size: 11px !important;
+  padding: 3px 10px !important;
+}
+
+/* Separator between axes */
+.filter-axis + .filter-axis {
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html.light-mode .filter-axis + .filter-axis {
+  border-left-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive: stack axes on narrow viewports */
+@media (max-width: 600px) {
+  .viz-filter-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .filter-axis + .filter-axis {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  html.light-mode .filter-axis + .filter-axis {
+    border-top-color: rgba(0, 0, 0, 0.08);
+  }
+}
