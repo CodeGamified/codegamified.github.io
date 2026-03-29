@@ -30,7 +30,7 @@
         "tiles": [
           {
             "emoji": "🧭",
-            "label": "SKILLTREE",
+            "label": "GENRES",
             "ariaLabel": "Open Graph of Knowledge",
             "action": "open",
             "img": "png/graph.png",
@@ -41,7 +41,7 @@
           },
           {
             "emoji": "🕰️",
-            "label": "ROADMAP",
+            "label": "HISTORY",
             "ariaLabel": "See more in Timeline",
             "action": "open",
             "img": "png/timeline.png",
