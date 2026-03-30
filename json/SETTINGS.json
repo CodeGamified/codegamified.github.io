@@ -103,7 +103,6 @@
     { "src": "TIMELINE.js",  "order": 5 },
     { "src": "SKILLTREE.js", "order": 5 },
     { "src": "MERMAID.js",   "order": 5 },
-    { "src": "MAP.js",       "order": 5 },
     { "src": "RADIO.js",     "order": 6 }
   ],
   "scripts_local": [
@@ -165,59 +164,27 @@
       "iframeScrolling": "no",
       "fitToContainer": true
     },
-    "biography": "BIOGRAPHY.json"
+    "biography": "BIOGRAPHY.json",
+    "knowledgeModal": {
+      "type": "viz",
+      "layout": "radial",
+      "dataSource": "GAMES",
+      "elementId": "knowledge-modal",
+      "ariaLabel": "Game Genre Graph"
+    },
+    "timelineModal": {
+      "type": "viz",
+      "layout": "timeline",
+      "elementId": "timeline-modal",
+      "ariaLabel": "Game Timeline",
+      "categories": ["arcade", "puzzle", "table", "combat", "simulator", "sandbox"]
+    }
   },
   "footer": {
     "text": "Code<span class=\"logo-dot\">.</span>Gamified",
     "author": {
       "name": "CodeGamified",
       "url": "https://github.com/CodeGamified"
-    }
-  },
-  "visualization": {
-    "domains": {
-      "robotics": {
-        "icon": "fa-cogs",
-        "label": "Robotics",
-        "emoji": "🤖",
-        "accent": 2
-      },
-      "games": {
-        "icon": "fa-gamepad",
-        "label": "Games",
-        "emoji": "🎮",
-        "accent": 3
-      },
-      "software": {
-        "icon": "fa-code",
-        "label": "Software",
-        "emoji": "💻",
-        "accent": 0
-      },
-      "research": {
-        "icon": "fa-flask",
-        "label": "Research",
-        "emoji": "🔬",
-        "accent": 1
-      },
-      "education": {
-        "icon": "fa-graduation-cap",
-        "label": "Education",
-        "emoji": "🎓",
-        "accent": 1
-      },
-      "work": {
-        "icon": "fa-briefcase",
-        "label": "Work",
-        "emoji": "💼",
-        "accent": 0
-      },
-      "projects": {
-        "icon": "fa-rocket",
-        "label": "Projects",
-        "emoji": "🚀",
-        "accent": 2
-      }
     }
   }
 }

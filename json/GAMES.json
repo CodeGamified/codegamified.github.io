@@ -705,5 +705,135 @@
         }
       ]
     }
-  ]
+  ],
+  "viz": {
+    "id": "knowledge-modal",
+    "ariaLabel": "Game Genre Graph",
+    "shell": {
+      "cardClass": "kg-modal-card",
+      "closeId": "knowledgeModalClose",
+      "toggleId": "kgLayoutToggle",
+      "svgClass": "kg-edges",
+      "accessibility": {
+        "toolbarLabel": "Genre filters",
+        "role": "application",
+        "ariaRoledescription": "Interactive knowledge graph",
+        "ariaLabel": "Radial node graph of games grouped by genre. Use arrow keys to navigate between nodes, Enter to open details.",
+        "liveRegionId": "kg-live",
+        "srDescriptions": [
+          "Game graph: radial layout of coding games organized by arcade, puzzle, table, combat, simulator, and sandbox genres."
+        ]
+      }
+    },
+    "center": {
+      "size": 100,
+      "icon": "🎮",
+      "action": "biography"
+    },
+    "nodes": {
+      "source": "modalState",
+      "require": ["DATE"],
+      "sectorField": "quadrant",
+      "sectorFallback": "domain",
+      "colorSource": "themes",
+      "labelField": "shortname",
+      "labelFallback": "NAME",
+      "whisperField": "whisper",
+      "onClick": "entry"
+    },
+    "filters": [
+      {
+        "key": "domain",
+        "dataAttr": "filter",
+        "mode": "grouped",
+        "itemsFrom": "themes",
+        "sectors": ["arcade", "puzzle", "table", "combat", "simulator", "sandbox"]
+      }
+    ],
+    "edges": {
+      "connect": "thread",
+      "style": "bezier",
+      "markers": true,
+      "dynamicColor": true,
+      "glow": true
+    },
+    "sizing": {
+      "field": "duration",
+      "min": 52,
+      "max": 120,
+      "transform": "sqrt"
+    },
+    "camera": {
+      "initialScale": 1.4,
+      "minScale": 1,
+      "maxScale": 4
+    },
+    "collision": {
+      "padding": 2,
+      "iterations": 60
+    },
+    "layout": {
+      "minDist": 100,
+      "maxDist": 400,
+      "spreadFactor": 0.6
+    },
+    "glow": {
+      "whisperCrossfade": true
+    },
+    "tour": {
+      "hintLabel": "<strong>Traverse</strong><span class=\"scroll-arrow\">\uD83D\uDD2D</span>",
+      "stepDelay": 2000,
+      "steps": [
+        { "filters": ["arcade"],    "label": "🕹️" },
+        { "filters": ["puzzle"],    "label": "🧩" },
+        { "filters": ["table"],     "label": "🎲" },
+        { "filters": ["combat"],    "label": "⚔️" },
+        { "filters": ["simulator"], "label": "🌍" },
+        { "filters": ["sandbox"],   "label": "🏖️" }
+      ]
+    }
+  },
+  "timeline": {
+    "whispers": {},
+    "nameOverrides": {},
+    "titleOverrides": {}
+  },
+  "domains": {
+    "arcade": {
+      "icon": "fa-gamepad",
+      "label": "Arcade",
+      "emoji": "🕹️",
+      "accent": 0
+    },
+    "puzzle": {
+      "icon": "fa-puzzle-piece",
+      "label": "Puzzle",
+      "emoji": "🧩",
+      "accent": 1
+    },
+    "table": {
+      "icon": "fa-dice",
+      "label": "Table",
+      "emoji": "🎲",
+      "accent": 2
+    },
+    "combat": {
+      "icon": "fa-crosshairs",
+      "label": "Combat",
+      "emoji": "⚔️",
+      "accent": 3
+    },
+    "simulator": {
+      "icon": "fa-globe",
+      "label": "Simulator",
+      "emoji": "🌍",
+      "accent": 0
+    },
+    "sandbox": {
+      "icon": "fa-umbrella-beach",
+      "label": "Sandbox",
+      "emoji": "🏖️",
+      "accent": 1
+    }
+  }
 }
